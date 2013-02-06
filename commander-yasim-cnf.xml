@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList include="commander-base.xml">
+
+  <sim>
+
+    <description>Aero Commander (YASim)</description>
+    <flight-model>yasim</flight-model>
+    <aero>commander-yasim</aero>
+
+  </sim>
+    
+</PropertyList>

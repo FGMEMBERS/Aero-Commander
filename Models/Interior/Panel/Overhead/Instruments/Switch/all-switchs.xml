@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/instr-switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.529990 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/land-switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.518490 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.499990 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.488490 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.469990 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.458490 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.437740 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <path>Aircraft/Socata-ST10/Models/Interior/Panel/Instruments/Switch/switch.xml</path>
+     <offsets>
+      <x-m>  0.000466 </x-m>
+      <y-m> -0.423470 </y-m>
+      <z-m> -0.221700 </z-m>
+   </offsets>
+  </model>
+
+</PropertyList>
+
+

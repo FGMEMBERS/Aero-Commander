@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- <PropertyList include="commander-jsbsim-cnf.xml"> -->
+<PropertyList include="commander-yasim-cnf.xml">
+
+  <sim>
+    
+    <description>Aero Commander (YASim)</description>
+    <author>BARANGER Emmanuel</author>
+    
+    <rating>
+      <FDM type="int">     1 </FDM>
+      <systems type="int"> 1 </systems>
+      <cockpit type="int"> 3 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+    
+  </sim>
+
+</PropertyList>
+

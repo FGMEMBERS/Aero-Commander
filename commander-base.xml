@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Nasal/views.xml">
+
+    <description>Aero Commander (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+   
+    <fuel-fraction>1.0</fuel-fraction>
+  
+    <startup>
+      <splash-texture>Aircraft/Aero-Commander/commander-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Aero-Commander/Sounds/commander-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Aero-Commander/Models/commander.xml</path>
+      <show-immat type="bool">1</show-immat>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <hide-yoke>true</hide-yoke>
+    </model> 
+
+    <flaps>
+      <setting> 0.00 </setting> <!--  0 deg -->
+      <setting> 0.25 </setting> <!-- 10 deg -->
+      <setting> 0.50 </setting> <!-- 20 deg -->
+      <setting> 0.75 </setting> <!-- 30 deg -->
+      <setting> 1.00 </setting> <!-- 40 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                                 <!--  0 immat -->
+        <int type="int" n="1">  0 </int>                                                 <!--  1 immat -->
+        <int type="int" n="2">  0 </int>                                                 <!--  2 immat -->
+        <int type="int" n="3">  0 </int>                                                 <!--  3 immat -->
+        <int type="int" n="4">  0 </int>                                                 <!--  4 immat -->
+        <int type="int" n="5">  0 </int>                                                 <!--  5 immat -->
+        <int type="int" n="8" alias="/sim/model/show-immat"> 0 </int>                    <!--  6 Show immat -->
+        <float n="0" alias="/instrumentation/doors/crew/position-norm"/>
+        <float n="1" alias="/instrumentation/doors/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                            <!-- altitude for MP shadow -->
+        <string n="9" type="string" />                                                   <!-- string[9] reserved for bombable mode -->
+      </generic>
+    </multiplay>
+
+   <help>
+      <title>Aero Commander 500</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close crew door</desc>
+      </key>
+      <key>
+        <name>D</name>
+        <desc>Open/Close main door</desc>
+      </key>
+      <key>
+        <name>E</name>
+        <desc>Open/Close cargo door</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/commander-menu.xml"/>
+
+  </sim>
+
+  <engines>
+    <engine n="0">
+      <rpm type="float">0</rpm>
+      <egt-degC type="float">0</egt-degC>
+      <oil-temperature-degC type="float">0</oil-temperature-degC>
+    </engine>
+    <engine n="1">
+      <rpm type="float">0</rpm>
+      <egt-degC type="float">0</egt-degC>
+      <oil-temperature-degC type="float">0</oil-temperature-degC>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Nasal/commander-keyboard.xml"/>
+  </input>
+
+  <controls>
+    <lighting>
+      <nav-lights type="bool">false</nav-lights>
+      <instrument-lights type="bool">false</instrument-lights>
+      <landing-lights type="bool">false</landing-lights>
+    </lighting>
+  </controls>
+      
+  <nasal>
+    <doors>
+      <file>Aircraft/Aero-Commander/Nasal/doors.nas</file>
+    </doors>
+    <commander>
+      <file>Aircraft/Aero-Commander/Nasal/liveries.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/light.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/immat.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/rpm.nas</file>
+    </commander>
+    <kr87>
+      <file>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+    <instrumentation>
+      <file>Aircraft/Aero-Commander/Nasal/instrumentation.nas</file>
+      <script>instrumentation.initIns();</script>
+    </instrumentation>
+  </nasal>
+
+</PropertyList>

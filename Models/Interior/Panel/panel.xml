@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>panel.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>panel</object-name>
+    <object-name>panel2</object-name>
+    <object-name>fondvide</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- Pedestal -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Pedestal/pedestal.xml</path>
+    <offsets>
+      <x-m>  0.03413 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.08537 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AI -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.364 </y-m>
+      <z-m>  0.128 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <offsets>
+      <x-m> 0.005 </x-m>
+      <y-m> 0.364 </y-m>
+      <z-m> 0.128 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ASI -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m> -0.456 </y-m>
+      <z-m>  0.128 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <offsets>
+      <x-m> 0.005 </x-m>
+      <y-m> 0.456 </y-m>
+      <z-m> 0.128 </z-m>
+    </offsets>
+  </model>
+
+  <!-- ALT -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m> -0.273 </y-m>
+      <z-m>  0.128 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/alt/alt.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m>  0.273 </y-m>
+      <z-m>  0.128 </z-m>
+    </offsets>
+  </model>
+
+  <!-- TURN -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m>  0.000 </x-m>
+      <y-m> -0.456 </y-m>
+      <z-m>  0.037 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.456 </y-m>
+      <z-m> 0.037 </z-m>
+    </offsets>
+  </model>
+
+  <!-- HI -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/ki227-01.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.364 </y-m>
+      <z-m>  0.037 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/ki227-01.xml</path>
+    <offsets>
+      <x-m> 0.001 </x-m>
+      <y-m> 0.364 </y-m>
+      <z-m> 0.037 </z-m>
+    </offsets>
+  </model>
+
+  <!-- VSI -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m> -0.273 </y-m>
+      <z-m>  0.037 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <offsets>
+      <x-m> -0.002 </x-m>
+      <y-m>  0.273 </y-m>
+      <z-m>  0.037 </z-m>
+    </offsets>
+  </model>
+
+  <!-- VOR -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vor/vor.xml</path>
+    <offsets>
+      <x-m> -0.006 </x-m>
+      <y-m> -0.179 </y-m>
+      <z-m>  0.128 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vor/vor2.xml</path>
+    <offsets>
+      <x-m> -0.006 </x-m>
+      <y-m> -0.179 </y-m>
+      <z-m>  0.037 </z-m>
+    </offsets>
+  </model>
+
+  <!-- CLOCK -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.539 </y-m>
+      <z-m>  0.086 </z-m>
+    </offsets>
+  </model>
+
+  <!-- AMP -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/amps/amp.xml</path>
+    <offsets>
+      <x-m>  0.001 </x-m>
+      <y-m> -0.539 </y-m>
+      <z-m> -0.047 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <offsets>
+      <x-m> 0.001 </x-m>
+      <y-m> 0.539 </y-m>
+      <z-m> 0.086 </z-m>
+    </offsets>
+  </model>
+
+  <!-- TRIM -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/trim/trim.xml</path>
+    <offsets>
+      <x-m>  0.002 </x-m>
+      <y-m> -0.093 </y-m>
+      <z-m> -0.007 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FLAPS -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/flaps/flaps.xml</path>
+    <offsets>
+      <x-m>  0.002 </x-m>
+      <y-m> -0.033 </y-m>
+      <z-m> -0.007 </z-m>
+    </offsets>
+  </model>
+
+  <!-- RPM -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/rpm.xml</path>
+    <offsets>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.194 </z-m>
+    </offsets>
+  </model>
+
+  <!-- MANIFOLD -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/man.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.081 </y-m>
+      <z-m>  0.194 </z-m>
+    </offsets>
+  </model>
+
+  <!-- PSI -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/psi/psi.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.081 </y-m>
+      <z-m>  0.124 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/psi/psi1.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.124 </z-m>
+    </offsets>
+  </model>
+
+  <!-- EGT -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/egt.xml</path>
+    <offsets>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.081 </y-m>
+      <z-m> 0.124 </z-m>
+    </offsets>
+  </model>
+
+  <!-- FUEL -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/fuel/fuel.xml</path>
+    <offsets>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.081 </y-m>
+      <z-m>  0.054 </z-m>
+    </offsets>
+  </model>
+
+  <!-- TEMP -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/temp/temp.xml</path>
+    <offsets>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.054 </z-m>
+    </offsets>
+  </model>
+
+  <!-- GEAR -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Gear/gear.xml</path>
+    <offsets>
+      <x-m> 0.003961 </x-m>
+      <y-m> 0.061840 </y-m>
+      <z-m> 0.053260 </z-m>
+    </offsets>
+  </model>
+
+  <!-- CHRONOGRAPH -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/chrono/chronometer.xml</path>
+    <offsets>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.179 </y-m>
+      <z-m> 0.037 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

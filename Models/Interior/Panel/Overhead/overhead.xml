@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>overhead.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>overhead</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+
+  <!-- Pedestal -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Magnetos/magnetoL.xml</path>
+    <offsets>
+      <x-m>  0.005412 </x-m>
+      <y-m> -0.038260 </y-m>
+      <z-m>  0.001585 </z-m>
+      <heading-deg> 8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Magnetos/magnetoR.xml</path>
+    <offsets>
+      <x-m> 0.005412 </x-m>
+      <y-m> 0.038260 </y-m>
+      <z-m> 0.001585 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model>
+
+  <!-- Starter -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Starter/startL.xml</path>
+    <offsets>
+      <x-m>  0.009549 </x-m>
+      <y-m> -0.091090 </y-m>
+      <z-m>  0.025080 </z-m>
+      <heading-deg> 8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Starter/startR.xml</path>
+    <offsets>
+      <x-m> 0.009549 </x-m>
+      <y-m> 0.091090 </y-m>
+      <z-m> 0.025080 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/land-lights.xml</path>
+    <offsets>
+      <x-m>  0.034 </x-m>
+      <y-m> -0.240 </y-m>
+      <z-m>  0.010 </z-m>
+      <heading-deg> 8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/instr-lights.xml</path>
+    <offsets>
+      <x-m>  0.03843 </x-m>
+      <y-m> -0.27500 </y-m>
+      <z-m>  0.01000 </z-m>
+      <heading-deg> 8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/nav-lights.xml</path>
+    <offsets>
+      <x-m>  0.04343 </x-m>
+      <y-m> -0.31100 </y-m>
+      <z-m>  0.01000 </z-m>
+      <heading-deg> 8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/nav-lights.xml</path>
+    <offsets>
+      <x-m> 0.034 </x-m>
+      <y-m> 0.240 </y-m>
+      <z-m> 0.010 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/instr-lights.xml</path>
+    <offsets>
+      <x-m> 0.03843 </x-m>
+      <y-m> 0.27500 </y-m>
+      <z-m> 0.01000 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/land-lights.xml</path>
+    <offsets>
+      <x-m> 0.04343 </x-m>
+      <y-m> 0.31100 </y-m>
+      <z-m> 0.01000 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

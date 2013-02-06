@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>interior.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>interieur</object-name>
+    <object-name>inttour</object-name>
+    <object-name>planchet</object-name>
+    <object-name>intportecrew</object-name>
+    <object-name>intportemain</object-name>
+    <object-name>intportecargo</object-name>
+    
+    <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+  </effect>
+
+  <!-- Pilote -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Pilot/pilot.xml</path>
+    <offsets>
+      <x-m> -3.19423 </x-m>
+      <y-m> -0.31000 </y-m>
+      <z-m> -1.20423 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.860 </x-m>
+      <y-m> -0.310 </y-m>
+      <z-m> -1.240 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.860 </x-m>
+      <y-m>  0.310 </y-m>
+      <z-m> -1.240 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Planche de bord -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/panel.xml</path>
+    <offsets>
+      <x-m> -3.85800 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.11858 </z-m>
+    </offsets>
+  </model>
+
+ <!-- Overhead -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/overhead.xml</path>
+    <offsets>
+      <x-m> -3.40986 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.43202 </z-m>
+      <pitch-deg> 68 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Magnetic Compass -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/MagneticCompass/MagneticCompass.xml</path>
+    <offsets>
+      <x-m> -3.859 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.818 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Yokes -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Yokes/yokes.xml</path>
+    <offsets>
+      <x-m> -3.64416 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -1.74414 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Les portes -->
+  <animation>
+    <name>IntPorteCrew</name>
+    <object-name>intportecrew</object-name>
+    <object-name>intvitrecrew</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntPorteCrew</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteCrew</object-name>
+    <property>sim/model/door-positions/crew/position-norm</property>
+    <factor> -70 </factor>
+    <axis>
+      <x1-m> -3.44836 </x1-m>
+      <y1-m> -0.70331 </y1-m>
+      <z1-m> -1.50346 </z1-m>
+      <x2-m> -3.44828 </x2-m>
+      <y2-m> -0.68191 </y2-m>
+      <z2-m> -1.05300 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteMain</name>
+    <object-name>intportemain</object-name>
+    <object-name>intvitremain</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntPorteMain</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteMain</object-name>
+    <property>sim/model/door-positions/passenger/position-norm</property>
+    <factor> -70 </factor>
+    <axis>
+      <x1-m> -1.89243 </x1-m>
+      <y1-m> -0.70331 </y1-m>
+      <z1-m> -1.50346 </z1-m>
+      <x2-m> -1.89234 </x2-m>
+      <y2-m> -0.68141 </y2-m>
+      <z2-m> -1.01734 </z2-m>
+    </axis>
+  </animation>
+
+  <animation>
+    <name>IntPorteCargo</name>
+    <object-name>intportecargo</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>IntPorteCargo</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>IntPorteCargo</object-name>
+    <property>sim/model/door-positions/cargo/position-norm</property>
+    <factor> -90 </factor>
+    <axis>
+      <x1-m> -0.81399 </x1-m>
+      <y1-m> -0.67472 </y1-m>
+      <z1-m> -1.07995 </z1-m>
+      <x2-m> -0.38148 </x2-m>
+      <y2-m> -0.67188 </y2-m>
+      <z2-m> -1.07995 </z2-m>
+    </axis>
+  </animation>
+
+</PropertyList>

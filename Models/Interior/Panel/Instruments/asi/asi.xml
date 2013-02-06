@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>asi.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  40 </ind><dep>  20 </dep></entry>
+      <entry><ind>  50 </ind><dep>  30 </dep></entry>
+      <entry><ind>  60 </ind><dep>  45 </dep></entry>
+      <entry><ind>  70 </ind><dep>  60 </dep></entry>
+      <entry><ind>  80 </ind><dep>  80 </dep></entry>
+      <entry><ind>  90 </ind><dep> 100 </dep></entry>
+      <entry><ind> 100 </ind><dep> 120 </dep></entry>
+      <entry><ind> 110 </ind><dep> 140 </dep></entry>
+      <entry><ind> 120 </ind><dep> 160 </dep></entry>
+      <entry><ind> 130 </ind><dep> 180 </dep></entry>
+      <entry><ind> 140 </ind><dep> 200 </dep></entry>
+      <entry><ind> 150 </ind><dep> 220 </dep></entry>
+      <entry><ind> 160 </ind><dep> 240 </dep></entry>
+      <entry><ind> 170 </ind><dep> 260 </dep></entry>
+      <entry><ind> 180 </ind><dep> 270 </dep></entry>
+      <entry><ind> 190 </ind><dep> 280 </dep></entry>
+      <entry><ind> 200 </ind><dep> 290 </dep></entry>
+      <entry><ind> 210 </ind><dep> 300 </dep></entry>
+      <entry><ind> 220 </ind><dep> 310 </dep></entry>
+      <entry><ind> 230 </ind><dep> 320 </dep></entry>
+      <entry><ind> 240 </ind><dep> 330 </dep></entry>
+      <entry><ind> 250 </ind><dep> 340 </dep></entry>
+      <entry><ind> 260 </ind><dep> 350 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

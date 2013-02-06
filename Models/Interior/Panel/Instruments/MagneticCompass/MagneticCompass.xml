@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>MagneticCompass.ac</path>
+
+  <animation>
+    <object-name>Case</object-name>
+    <object-name>Ball</object-name>
+    <object-name>Marker</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>Ball</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>Ball</object-name>
+    <property>instrumentation/magnetic-compass/indicated-heading-deg</property>
+    <center>
+      <x-m> -0.022 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m>  0.000 </z-m>
+    </center> 
+    <axis>
+     <x> 0 </x>
+     <y> 0 </y>
+     <z> 1 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

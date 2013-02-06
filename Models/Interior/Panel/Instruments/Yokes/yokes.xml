@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>yokes.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+    <object-name>base</object-name>
+    <object-name>yokeL</object-name>
+    <object-name>yokeR</object-name>
+    
+    <!-- Objets transparents -->
+  </animation>
+
+  <animation>
+    <name>AllYokes</name>
+    <object-name>base</object-name>
+    <object-name>yokeL</object-name>
+    <object-name>yokeR</object-name>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>AllYokes</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -10 </factor>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>yokeL</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m>  0.02420 </x-m>
+      <y-m> -0.30094 </y-m>
+      <z-m>  0.65702 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>yokeR</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -30 </factor>
+    <center>
+      <x-m> 0.02420 </x-m>
+      <y-m> 0.30094 </y-m>
+      <z-m> 0.65702 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Yokes visible ou non -->
+  <animation>
+    <type>select</type>
+    <object-name>AllYokes</object-name>
+    <condition>
+      <property>/sim/model/hide-yoke</property>
+    </condition>
+  </animation>
+ 
+ </PropertyList>

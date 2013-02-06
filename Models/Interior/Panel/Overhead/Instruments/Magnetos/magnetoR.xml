@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>magnetoR.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>manette</object-name>
+
+   <object-name>increase</object-name>
+   <object-name>decrease</object-name>
+ </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>increase</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/magnetos</property>
+        <step>1</step>
+        <min>0</min>
+        <max>3</max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>decrease</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/engine[1]/magnetos</property>
+        <step>-1</step>
+        <min>0</min>
+        <max>3</max>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>manette</object-name>
+    <property>controls/engines/engine[1]/magnetos</property>
+    <factor> 30 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

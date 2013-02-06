@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>turn.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>slipball</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>slipball</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>instrumentation/turn-indicator/indicated-turn-rate</property>
+    <factor> 14 </factor>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>slipball</object-name>
+    <property>instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>   21 </factor>
+    <min-deg> -19 </min-deg>
+    <max-deg>  19 </max-deg>
+    <center>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.036 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>
+
