@@ -7,7 +7,7 @@ name "disctrim"
 loc 0.02 0.003 0.093024
 data 8
 disctrim
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 514
@@ -4052,7 +4052,7 @@ name "fentes"
 loc 0.035382 -0.079763 -0
 data 6
 fentes
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 108
@@ -4759,7 +4759,7 @@ name "mixture-knob.L"
 loc -0.019207 -0.008956 -0.03374
 data 14
 mixture-knob.L
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 82
@@ -5384,7 +5384,7 @@ name "mixture-knob.R"
 loc -0.019207 -0.008956 -0.05187
 data 14
 mixture-knob.R
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 82
@@ -6009,7 +6009,7 @@ name "pedestal"
 loc 0.035382 -0.079763 -0
 data 8
 pedestal
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 285
@@ -7969,7 +7969,7 @@ name "rpm-knob.L"
 loc -0.019207 -0.008956 0.010047
 data 10
 rpm-knob.L
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 172
@@ -9335,7 +9335,7 @@ name "rpm-knob.R"
 loc -0.019207 -0.008956 -0.01005
 data 10
 rpm-knob.R
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 172
@@ -10861,7 +10861,7 @@ name "throttle-knob.L"
 loc -0.019207 -0.008956 0.051869
 data 15
 throttle-knob.L
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 57
@@ -11286,7 +11286,7 @@ name "throttle-knob.R"
 loc -0.019207 -0.008956 0.033743
 data 15
 throttle-knob.R
-texture "colors.png"
+texture "pedestal.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 57

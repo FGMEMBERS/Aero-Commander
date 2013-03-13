@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>warning1.ac</path>
+
+  <animation>
+    <object-name>warning1</object-name>
+  </animation>
+
+</PropertyList>
+

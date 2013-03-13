@@ -7,7 +7,7 @@ name "base"
 loc 0 0 -0
 data 4
 base
-texture "colors.png"
+texture "start.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 128
@@ -818,7 +818,7 @@ name "button"
 loc 0 0 -0
 data 6
 button
-texture "colors.png"
+texture "start.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 225

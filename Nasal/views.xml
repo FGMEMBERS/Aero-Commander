@@ -2,7 +2,7 @@
 
 <PropertyList>
 
-  <chase-distance-m type="double" archive="y"> -15 </chase-distance-m>
+  <chase-distance-m type="double" archive="y"> -20 </chase-distance-m>
 
   <view n="100">
     <name>Co pilote</name>
@@ -12,9 +12,9 @@
       <from-model type="bool">true</from-model>
       <from-model-idx type="int">0</from-model-idx>
       <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
-      <x-offset-m archive="y">  0.32156 </x-offset-m> <!-- Right -->
-      <y-offset-m archive="y"> -0.73027 </y-offset-m> <!-- Up    -->
-      <z-offset-m archive="y"> -3.08595 </z-offset-m> <!-- Back  -->
+      <x-offset-m archive="y">  0.28725 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y"> -0.69574 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -3.17461 </z-offset-m> <!-- Back  -->
       <pitch-offset-deg> -10 </pitch-offset-deg>
       <default-field-of-view-deg> 76 </default-field-of-view-deg>
     </config>
@@ -41,9 +41,9 @@
     <type>lookfrom</type>
     <internal>true</internal>
     <config>
-      <x-offset-m archive="y"> -0.32156 </x-offset-m> <!-- Right -->
-      <y-offset-m archive="y"> -0.73027 </y-offset-m> <!-- Up    -->
-      <z-offset-m archive="y"> -3.08595 </z-offset-m> <!-- Back  -->
+      <x-offset-m archive="y"> -0.28725 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y"> -0.69574 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -3.17461 </z-offset-m> <!-- Back  -->
       <pitch-offset-deg> -10 </pitch-offset-deg>
       <default-field-of-view-deg> 76 </default-field-of-view-deg>
     </config>

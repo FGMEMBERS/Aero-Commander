@@ -42,7 +42,7 @@
     <type>rotate</type>
     <object-name>needle</object-name>
     <property>/controls/flight/flaps</property>
-    <factor> 90 </factor>
+    <factor> 50 </factor>
     <offset-deg> 0 </offset-deg>
     <center>
      <x-m>  0.001318 </x-m>

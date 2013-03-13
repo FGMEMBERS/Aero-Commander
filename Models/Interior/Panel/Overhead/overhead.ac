@@ -7,7 +7,7 @@ name "overhead"
 loc 0 0 -0
 data 8
 overhead
-texture "colors.png"
+texture "overhead.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 20

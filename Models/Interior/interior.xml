@@ -10,13 +10,29 @@
     <object-name>inttour</object-name>
     <object-name>planchet</object-name>
     <object-name>intportecrew</object-name>
+    <object-name>intportecrew2</object-name>
     <object-name>intportemain</object-name>
     <object-name>intportecargo</object-name>
+    <object-name>Ceniceros</object-name>
+    <object-name>carte1</object-name>
+    <object-name>carte2</object-name>
+    <object-name>courbe</object-name>
     
     <!-- Objets transparents -->
     <object-name>intvitres</object-name>
     <object-name>intvitrecrew</object-name>
     <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Aero-Commander/Models/Effects/Glass_Shader/glass_shader.png</texture>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
   </animation>
 
   <animation>
@@ -24,15 +40,7 @@
     <object-name>intvitres</object-name>
     <object-name>intvitrecrew</object-name>
     <object-name>intvitremain</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>intvitres</object-name>
-    <object-name>intvitrecrew</object-name>
-    <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
   </animation>
 
   <!-- working for Rembrandt -->
@@ -44,15 +52,25 @@
     <object-name>intvitres</object-name>
     <object-name>intvitrecrew</object-name>
     <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
   </effect>
-
+ 
   <!-- Pilote -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Pilot/pilot.xml</path>
     <offsets>
-      <x-m> -3.19423 </x-m>
-      <y-m> -0.31000 </y-m>
-      <z-m> -1.20423 </z-m>
+      <x-m> -3.401 </x-m>
+      <y-m> -0.286 </y-m>
+      <z-m> -1.241 </z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
+    <offsets>
+      <x-m> -2.991 </x-m>
+      <y-m> -0.294 </y-m>
+      <z-m> -1.145 </z-m>
     </offsets>
   </model>
 
@@ -60,17 +78,28 @@
     <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
     <offsets>
       <x-m> -2.860 </x-m>
-      <y-m> -0.310 </y-m>
+      <y-m>  0.309 </y-m>
       <z-m> -1.240 </z-m>
     </offsets>
   </model>
 
+  <!-- Pilot pedals -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
     <offsets>
-      <x-m> -2.860 </x-m>
-      <y-m>  0.310 </y-m>
-      <z-m> -1.240 </z-m>
+      <x-m> -3.818 </x-m>
+      <y-m> -0.301 </y-m>
+      <z-m> -1.543 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot pedals -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
+    <offsets>
+      <x-m> -3.818 </x-m>
+      <y-m>  0.301 </y-m>
+      <z-m> -1.543 </z-m>
     </offsets>
   </model>
 
@@ -84,7 +113,7 @@
     </offsets>
   </model>
 
- <!-- Overhead -->
+  <!-- Overhead -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/overhead.xml</path>
     <offsets>
@@ -99,9 +128,9 @@
   <model>
     <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/MagneticCompass/MagneticCompass.xml</path>
     <offsets>
-      <x-m> -3.859 </x-m>
+      <x-m> -3.751 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.818 </z-m>
+      <z-m> -0.790 </z-m>
     </offsets>
   </model>
 
@@ -109,7 +138,7 @@
   <model>
     <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Yokes/yokes.xml</path>
     <offsets>
-      <x-m> -3.64416 </x-m>
+      <x-m> -3.52416 </x-m>
       <y-m>  0.00000 </y-m>
       <z-m> -1.74414 </z-m>
     </offsets>
@@ -120,6 +149,7 @@
     <name>IntPorteCrew</name>
     <object-name>intportecrew</object-name>
     <object-name>intvitrecrew</object-name>
+    <object-name>intportecrew2</object-name>
   </animation>
 
   <animation>

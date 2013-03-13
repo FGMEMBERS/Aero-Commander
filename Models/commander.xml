@@ -60,6 +60,7 @@
     <object-name>airs</object-name>
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
+    <object-name>antennes</object-name>
     
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
@@ -68,9 +69,15 @@
     <object-name>axeA</object-name>
     <object-name>roueA</object-name>
     <object-name>axeGH</object-name>
+    <object-name>tuyauG</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
+    <object-name>tuyauD</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
 
@@ -121,6 +128,7 @@
     <object-name>airs</object-name>
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
+    <object-name>antennes</object-name>
     
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
@@ -129,9 +137,15 @@
     <object-name>axeA</object-name>
     <object-name>roueA</object-name>
     <object-name>axeGH</object-name>
+    <object-name>tuyauG</object-name>
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
     <object-name>axeGB</object-name>
     <object-name>roueG</object-name>
     <object-name>axeDH</object-name>
+    <object-name>tuyauD</object-name>
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
     
@@ -152,6 +166,9 @@
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <condition>
+      <not><property>sim/rendering/rembrandt/enabled</property></not>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>portecrew</object-name>
     <object-name>portemain</object-name>
@@ -184,13 +201,14 @@
     <object-name>airs</object-name>
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
+    <object-name>antennes</object-name>
   </effect>
 
   <effect>
     <inherits-from>Effects/model-combined-deferred</inherits-from>
+    <condition>
+      <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
     <object-name>fuselage</object-name>
     <object-name>portecrew</object-name>
     <object-name>portemain</object-name>
@@ -222,16 +240,16 @@
     <object-name>airs</object-name>
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <object-name>antennes</object-name>
   </effect>
 
   <animation>
     <type>shader</type>
     <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <texture>Aircraft/Aero-Commander/Models/Effects/Glass_Shader/glass_shader.png</texture>
     <object-name>vitres</object-name>
+    <object-name>vitrecrew</object-name>
+    <object-name>vitremain</object-name>
   </animation>
 
   <animation>
@@ -245,7 +263,6 @@
     <object-name>propblurD</object-name>
     <object-name>beacontrs</object-name>
     <object-name>lampes</object-name>
-    <object-name>cables</object-name>
   </animation>
 
   <!-- working for Rembrandt -->
@@ -254,17 +271,22 @@
     <condition>
       <property>sim/rendering/rembrandt/enabled</property>
     </condition>
-    <object-name>vitres</object-name>
-    <object-name>vitrecrew</object-name>
-    <object-name>vitremain</object-name>
-    <object-name>propdiscG</object-name>
     <object-name>propblurG</object-name>
     <object-name>propdiscD</object-name>
     <object-name>propblurD</object-name>
     <object-name>beacontrs</object-name>
     <object-name>lampes</object-name>
-    <object-name>cables</object-name>
   </effect>
+
+  <!-- Une ombre pour OSG -->
+  <model>
+    <path>Aircraft/Aero-Commander/Models/shadow.xml</path>
+    <offsets>
+      <x-m>  0.00 </x-m>
+      <y-m>  0.00 </y-m>
+      <z-m> -2.11 </z-m>
+    </offsets>
+  </model>
 
   <!-- Interieur -->
   <model>
@@ -277,8 +299,8 @@
     <type>noshadow</type>
     <object-name>Interieur</object-name>
   </animation>
-
- <!-- Immatriculation -->
+  
+  <!-- Immatriculation -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Immat/immat.xml</path>
   </model>
@@ -326,16 +348,6 @@
   </model>
 
   <!-- Effets sur le sol -->
-  <!-- Roue avant -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/ground/ground0.xml</path>   
-    <offsets>
-      <x-m> -5.35378 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -2.22031 </z-m>
-    </offsets>
-  </model>
-
   <!-- Roue gauche -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Effects/ground/ground1.xml</path>
@@ -834,17 +846,21 @@
  
   <animation>
     <name>TrainGauche</name>
-    <object-name>roueG</object-name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
-  </animation>
+    <object-name>articuleGH</object-name>   
+    <object-name>articuleGB</object-name>   
+    <object-name>entreaxeG</object-name>
+    <object-name>tuyauG</object-name>
+    <object-name>roueG</object-name>
+ </animation>
 
   <animation>
     <type>rotate</type>
     <object-name>TrainGauche</object-name>
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -107 </dep></entry>
+      <entry><ind> 0 </ind><dep> -100 </dep></entry>
       <entry><ind> 1 </ind><dep>    0 </dep></entry>
     </interpolation>
     <center>
@@ -860,10 +876,34 @@
   </animation>
  
   <animation>
+    <type>rotate</type>
+    <object-name>TrainGauche</object-name>
+    <property>gear/gear[1]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 90 </dep></entry>
+      <entry><ind> 1 </ind><dep>  0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.77452 </x-m>
+      <y-m> -1.96313 </y-m>
+      <z-m> -0.83951 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
     <name>TrainDroit</name>
-    <object-name>roueD</object-name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
+    <object-name>articuleDH</object-name>   
+    <object-name>articuleDB</object-name>   
+    <object-name>entreaxeD</object-name>
+    <object-name>tuyauD</object-name>
+    <object-name>roueD</object-name>
   </animation>
 
   <animation>
@@ -871,7 +911,7 @@
     <object-name>TrainDroit</object-name>
     <property>gear/gear[2]/position-norm</property>
     <interpolation>
-      <entry><ind> 0 </ind><dep> -107 </dep></entry>
+      <entry><ind> 0 </ind><dep> -100 </dep></entry>
       <entry><ind> 1 </ind><dep>    0 </dep></entry>
     </interpolation>
     <center>
@@ -886,13 +926,56 @@
     </axis>
   </animation>
  
+  <animation>
+    <type>rotate</type>
+    <object-name>TrainDroit</object-name>
+    <property>gear/gear[2]/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -90 </dep></entry>
+      <entry><ind> 1 </ind><dep>   0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.77452 </x-m>
+      <y-m>  1.96313 </y-m>
+      <z-m> -0.83951 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+ 
   <!-- Suspensions 0.036 -->
   <animation>
     <name>AxeGauche</name>
     <object-name>roueG</object-name>
     <object-name>axeGB</object-name>
+    <object-name>articuleGB</object-name>   
+    <object-name>tuyauG</object-name>
   </animation>
   
+  <animation>
+    <type>rotate</type>
+    <object-name>articuleGH</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.235 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> 35 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.81321 </x-m>
+      <y-m> -1.96251 </y-m>
+      <z-m> -1.25736 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
   <animation>
     <type>translate</type>
     <object-name>AxeGauche</object-name>
@@ -910,11 +993,55 @@
   </animation>
  
   <animation>
+    <type>rotate</type>
+    <object-name>articuleGB</object-name>
+    <property>gear/gear[1]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.235 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -35 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.81785 </x-m>
+      <y-m> -1.96153 </y-m>
+      <z-m> -1.43888 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
     <name>AxeDroite</name>
     <object-name>roueD</object-name>
     <object-name>axeDB</object-name>
+    <object-name>articuleDB</object-name>   
+    <object-name>tuyauD</object-name>
   </animation>
   
+  <animation>
+    <type>rotate</type>
+    <object-name>articuleDH</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>  0 </dep></entry>
+      <entry><ind> 0.235 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> 35 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.81321 </x-m>
+      <y-m>  1.96251 </y-m>
+      <z-m> -1.25736 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+ 
   <animation>
     <type>translate</type>
     <object-name>AxeDroite</object-name>
@@ -928,6 +1055,27 @@
       <x> 0 </x>
       <y> 0 </y>
       <z> 1 </z>
+    </axis>
+  </animation>
+ 
+  <animation>
+    <type>rotate</type>
+    <object-name>articuleDB</object-name>
+    <property>gear/gear[2]/compression-norm</property>
+    <interpolation>
+      <entry><ind> 0.000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 0.235 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.000 </ind><dep> -35 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.81785 </x-m>
+      <y-m>  1.96153 </y-m>
+      <z-m> -1.43888 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
  

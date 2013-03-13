@@ -7,7 +7,7 @@ name "fondvide"
 loc -0.005474 0 -0
 data 8
 fondvide
-texture "colors.png"
+texture "panel.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 20
@@ -122,7 +122,7 @@ name "panel"
 loc 0 0 -0
 data 5
 panel
-texture "colors.png"
+texture "panel.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 177
@@ -1294,7 +1294,7 @@ name "panel2"
 loc 0 0 -0
 data 6
 panel2
-texture "colors.png"
+texture "panel.png"
 texrep 1.000000 1.000000
 crease 30.000001
 numvert 1485

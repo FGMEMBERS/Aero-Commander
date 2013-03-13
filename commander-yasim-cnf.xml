@@ -4,10 +4,11 @@
 
   <sim>
 
-    <description>Aero Commander (YASim)</description>
+    <description>Aero Commander 500 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
     <flight-model>yasim</flight-model>
     <aero>commander-yasim</aero>
 
   </sim>
-    
+
 </PropertyList>

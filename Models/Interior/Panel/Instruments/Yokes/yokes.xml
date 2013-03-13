@@ -39,7 +39,7 @@
     <factor> -30 </factor>
     <center>
       <x-m>  0.02420 </x-m>
-      <y-m> -0.30094 </y-m>
+      <y-m> -0.26094 </y-m>
       <z-m>  0.65702 </z-m>
     </center>
     <axis>
@@ -56,7 +56,7 @@
     <factor> -30 </factor>
     <center>
       <x-m> 0.02420 </x-m>
-      <y-m> 0.30094 </y-m>
+      <y-m> 0.26094 </y-m>
       <z-m> 0.65702 </z-m>
     </center>
     <axis>

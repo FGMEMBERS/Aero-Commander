@@ -4,13 +4,13 @@
 
   <sim include="Nasal/views.xml">
 
-    <description>Aero Commander (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM)</author>
+    <description>Aero Commander 500 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
     <aircraft-version>0.1</aircraft-version>
     <status>Alpha</status>
-   
+
     <fuel-fraction>1.0</fuel-fraction>
-  
+
     <startup>
       <splash-texture>Aircraft/Aero-Commander/commander-splash.png</splash-texture>
     </startup>
@@ -26,7 +26,7 @@
         <file type="string">default</file>
       </livery>
       <hide-yoke>true</hide-yoke>
-    </model> 
+    </model>
 
     <flaps>
       <setting> 0.00 </setting> <!--  0 deg -->
@@ -96,8 +96,11 @@
       <instrument-lights type="bool">false</instrument-lights>
       <landing-lights type="bool">false</landing-lights>
     </lighting>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
   </controls>
-      
+
   <nasal>
     <doors>
       <file>Aircraft/Aero-Commander/Nasal/doors.nas</file>
