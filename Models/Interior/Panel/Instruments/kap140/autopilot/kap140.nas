@@ -272,7 +272,7 @@ var apPower = func {
 var apButton = func {
   ##print("apButton");
 #  Disable button if too little power
-  if (getprop(power) < minVoltageLimit) { return; }
+# ? en remarque car cette ligne plante : if (getprop(power) < minVoltageLimit) { return; }
 
   ##
   # Engages the autopilot in Wings level mode (ROL) and Vertical speed hold
@@ -379,7 +379,7 @@ var apButton = func {
 var hdgButton = func {
   ##print("hdgButton");
 #  Disable button if too little power
-  if (getprop(power) < minVoltageLimit) { return; }
+# ? en remarque car cette ligne plante : if (getprop(power) < minVoltageLimit) { return; }
 
   ##
   # Engages the heading mode (HDG) and vertical speed hold mode (VS). The

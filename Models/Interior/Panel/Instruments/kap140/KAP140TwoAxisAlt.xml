@@ -99,11 +99,12 @@ properties' values.
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <name>annunciators</name>
     <object-name>roll-axis-fail</object-name>

@@ -13,18 +13,12 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -39,16 +33,14 @@
       <blue>  0.50 </blue>
     </emission>
   </animation>
-<!--
   <animation>
     <type>rotate</type>
     <object-name>needleL</object-name>
-    <property>engines/engine[0]/egt-degf</property>
+    <property>engines/engine[0]/cht-degc</property>
     <interpolation>
       <entry><ind>    0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  800 </ind><dep>  42 </dep></entry>
-      <entry><ind> 1200 </ind><dep>  84 </dep></entry>
-      <entry><ind> 1600 </ind><dep> 125 </dep></entry>
+      <entry><ind>  150 </ind><dep>  75 </dep></entry>
+      <entry><ind>  300 </ind><dep> 125 </dep></entry>
     </interpolation>
     <center>
       <x-m> -0.001929 </x-m>
@@ -65,12 +57,11 @@
   <animation>
     <type>rotate</type>
     <object-name>needleR</object-name>
-    <property>engines/engine[1]/egt-degf</property>
+    <property>engines/engine[1]/cht-degc</property>
     <interpolation>
       <entry><ind>    0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  800 </ind><dep>  42 </dep></entry>
-      <entry><ind> 1200 </ind><dep>  84 </dep></entry>
-      <entry><ind> 1600 </ind><dep> 125 </dep></entry>
+      <entry><ind>  150 </ind><dep>  75 </dep></entry>
+      <entry><ind>  300 </ind><dep> 125 </dep></entry>
     </interpolation>
     <center>
       <x-m> -0.001929 </x-m>
@@ -83,5 +74,4 @@
       <z>  0 </z>
     </axis>
   </animation>
-  -->
 </PropertyList>

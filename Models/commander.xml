@@ -13,9 +13,9 @@
       var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
 
-      var crew_door = self.getNode("instrumentation/doors/crew/position-norm", 1);
-      var passenger_door = self.getNode("instrumentation/doors/passenger/position-norm", 1);
-
+      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
+      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
+      
       crew_door.alias(float_0);
       passenger_door.alias(float_0);
     </load>
@@ -157,18 +157,10 @@
       <green> 0.3 </green>
       <blue>  0.3 </blue>
     </specular>
-    <emission>
-      <red>   0.2 </red>
-      <green> 0.2 </green>
-      <blue>  0.2 </blue>
-    </emission>
   </animation>
 
   <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
-    <condition>
-      <not><property>sim/rendering/rembrandt/enabled</property></not>
-    </condition>
     <object-name>fuselage</object-name>
     <object-name>portecrew</object-name>
     <object-name>portemain</object-name>
@@ -204,56 +196,16 @@
     <object-name>antennes</object-name>
   </effect>
 
+  <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-combined-deferred</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>fuselage</object-name>
-    <object-name>portecrew</object-name>
-    <object-name>portemain</object-name>
-    <object-name>portecargo</object-name>
-    <object-name>ailes</object-name>
-    <object-name>aileronG</object-name>
-    <object-name>aileronD</object-name>
-    <object-name>voletG1</object-name>
-    <object-name>voletG2</object-name>
-    <object-name>voletD1</object-name>
-    <object-name>voletD2</object-name>
-    <object-name>ailes2</object-name>
-    <object-name>moteurs</object-name>
-    <object-name>profondeurG</object-name>
-    <object-name>profondeurD</object-name>
-    <object-name>porteAG1</object-name>
-    <object-name>porteAG2</object-name>
-    <object-name>porteAD1</object-name>
-    <object-name>porteAD2</object-name>
-    <object-name>porteGE</object-name>
-    <object-name>porteGI</object-name>
-    <object-name>porteDE</object-name>
-    <object-name>porteDI</object-name>
-    <object-name>bolG</object-name>
-    <object-name>bolD</object-name>
-    <object-name>antennes</object-name>
-    <object-name>supportlampes</object-name>
-    <object-name>cachescables</object-name>
-    <object-name>airs</object-name>
-    <object-name>charniere1</object-name>
-    <object-name>charniere2</object-name>
-    <object-name>antennes</object-name>
-  </effect>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Aero-Commander/Models/Effects/Glass_Shader/glass_shader.png</texture>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitrecrew</object-name>
     <object-name>vitremain</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
+  </effect>
+  
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitrecrew</object-name>
     <object-name>vitremain</object-name>
@@ -263,21 +215,8 @@
     <object-name>propblurD</object-name>
     <object-name>beacontrs</object-name>
     <object-name>lampes</object-name>
-  </animation>
-
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
-    <object-name>propblurG</object-name>
-    <object-name>propdiscD</object-name>
-    <object-name>propblurD</object-name>
-    <object-name>beacontrs</object-name>
-    <object-name>lampes</object-name>
   </effect>
-
+  
   <!-- Une ombre pour OSG -->
   <model>
     <path>Aircraft/Aero-Commander/Models/shadow.xml</path>
@@ -290,16 +229,9 @@
 
   <!-- Interieur -->
   <model>
-    <name>Interieur</name>
     <path>Aircraft/Aero-Commander/Models/Interior/interior.xml</path>
   </model>
 
-  <!-- For Rembrandt -->
-  <animation>
-    <type>noshadow</type>
-    <object-name>Interieur</object-name>
-  </animation>
-  
   <!-- Immatriculation -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Immat/immat.xml</path>
@@ -420,7 +352,7 @@
     <condition>
       <less-than>
         <property>/engines/engine[0]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
@@ -428,6 +360,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceGauche</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[0]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>/engines/engine[0]/rpm</property>
     <factor> 1 </factor>
     <center>
@@ -477,7 +415,7 @@
     <condition>
       <less-than>
         <property>/engines/engine[1]/rpm</property>
-	<value>1500</value>
+        <value>1500</value>
       </less-than>
     </condition>
   </animation>
@@ -485,6 +423,12 @@
   <animation>
     <type>spin</type>
     <object-name>HeliceDroite</object-name>
+    <condition>
+      <greater-than>
+        <property>engines/engine[1]/rpm</property>
+        <value> 5 </value>
+      </greater-than>
+    </condition>
     <property>/engines/engine[1]/rpm</property>
     <factor> 1 </factor>
     <center>

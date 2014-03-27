@@ -15,18 +15,12 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -47,13 +41,13 @@
   <animation> 
     <type>rotate</type>
     <object-name>needle1</object-name>
-    <property>/engines/engine[0]/oil-temperature-degf</property>
+    <property>/engines/engine[0]/oil-temperature</property>
     <interpolation>
-      <entry><ind> -122 </ind><dep> -30 </dep></entry> <!-- -50 deg C -->
-      <entry><ind>    0 </ind><dep>   0 </dep></entry> <!--   0 deg C -->
-      <entry><ind>  122 </ind><dep>  30 </dep></entry> <!--  50 deg C -->
-      <entry><ind>  212 </ind><dep>  60 </dep></entry> <!-- 100 deg C -->
-      <entry><ind>  302 </ind><dep>  90 </dep></entry> <!-- 150 deg C-->
+      <entry><ind> -50 </ind><dep> -30 </dep></entry> <!-- -50 deg C -->
+      <entry><ind>   0 </ind><dep>   0 </dep></entry> <!--   0 deg C -->
+      <entry><ind>  50 </ind><dep>  30 </dep></entry> <!--  50 deg C -->
+      <entry><ind> 100 </ind><dep>  60 </dep></entry> <!-- 100 deg C -->
+      <entry><ind> 150 </ind><dep>  90 </dep></entry> <!-- 150 deg C-->
     </interpolation>
     <axis> 
       <x> -1 </x>
@@ -68,6 +62,7 @@
     <property>/engines/engine[0]/oil-pressure-psi</property>
     <interpolation>
       <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  40 </ind><dep>  50 </dep></entry>
       <entry><ind> 100 </ind><dep>  90 </dep></entry>
       <entry><ind> 200 </ind><dep> 180 </dep></entry>
     </interpolation>
@@ -89,9 +84,8 @@
     <property>/engines/engine[0]/fuel-pressure-psi</property>
     <interpolation>
       <entry><ind>  0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 10 </ind><dep>  30 </dep></entry>
-      <entry><ind> 15 </ind><dep>  60 </dep></entry>
-      <entry><ind> 20 </ind><dep>  90 </dep></entry>
+      <entry><ind>  5 </ind><dep>  50 </dep></entry>
+      <entry><ind> 10 </ind><dep>  90 </dep></entry>
       <entry><ind> 25 </ind><dep> 122 </dep></entry>
       <entry><ind> 35 </ind><dep> 180 </dep></entry>
     </interpolation>

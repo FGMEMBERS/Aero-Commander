@@ -1,13 +1,11 @@
 default
 
-These liveries were made by : Emmanuel BARANGER 2013
+These liveries were made by : Emmanuel BARANGER (helijah) 2013
 
-texture2046
-texturelow2046
+texture2046 (High/low)
 
-texture2049
-texturelow2049
+texture2049 (High/Low)
 
-These liveries were made by : Emmanuel BARANGER 2013
+These liveries were made by : Olivier (Samaliet) 2013
 
 Thanks to him

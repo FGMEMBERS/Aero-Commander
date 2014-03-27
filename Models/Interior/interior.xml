@@ -25,36 +25,15 @@
     <object-name>paresoleil</object-name>
   </animation>
 
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Aero-Commander/Models/Effects/Glass_Shader/glass_shader.png</texture>
-    <object-name>intvitres</object-name>
-    <object-name>intvitrecrew</object-name>
-    <object-name>intvitremain</object-name>
-    <object-name>paresoleil</object-name>
-  </animation>
-
-  <animation>
-    <type>noshadow</type>
-    <object-name>intvitres</object-name>
-    <object-name>intvitrecrew</object-name>
-    <object-name>intvitremain</object-name>
-    <object-name>paresoleil</object-name>
-  </animation>
-
   <!-- working for Rembrandt -->
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-    <condition>
-      <property>sim/rendering/rembrandt/enabled</property>
-    </condition>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>intvitres</object-name>
     <object-name>intvitrecrew</object-name>
     <object-name>intvitremain</object-name>
     <object-name>paresoleil</object-name>
   </effect>
- 
+  
   <!-- Pilote -->
   <model>
     <path>Aircraft/Aero-Commander/Models/Pilot/pilot.xml</path>

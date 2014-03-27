@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>Aero Commander 500</title>
+  <key>
+    <name>d</name>
+    <desc>Open/Close crew door</desc>
+  </key>
+  <key>
+    <name>D</name>
+    <desc>Open/Close main door</desc>
+  </key>
+  <key>
+    <name>E</name>
+    <desc>Open/Close cargo door</desc>
+  </key>
+  
+</PropertyList>

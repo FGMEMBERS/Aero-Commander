@@ -3,6 +3,8 @@
 <!-- KR-87
      Bendix/King ADF Reciever
      Syd Adams
+     
+     updated Emmanuel BARANGER
 -->
 
 <PropertyList>
@@ -59,18 +61,12 @@
     <object-name>stby.004</object-name>
   </animation>
 
-  <animation>
-    <type>noshadow</type>
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
     <object-name>KR87.vitre</object-name>
-  </animation>
-
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-    <object-name>KR87.vitre</object-name>
-  </animation>
-
+  </effect>
+  
   <animation>
     <type>material</type>
     <object-name>KR87.adf</object-name>
