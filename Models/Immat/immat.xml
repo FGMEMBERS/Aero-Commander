@@ -105,7 +105,7 @@
     <object-name>ImatPanel5</object-name>
     <object-name>ImatPanel6</object-name>
     <condition>
-      <property>sim/multiplay/generic/int[8]</property>
+      <property>sim/multiplay/generic/int[7]</property>
     </condition>
   </animation>
 

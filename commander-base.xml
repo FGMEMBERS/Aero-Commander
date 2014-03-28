@@ -61,7 +61,7 @@
         <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
         <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
         <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
-        <int type="int" n="7">  0 </int>                                      <!-- 7 color -->
+        <int type="bool" n="7" alias="/model/show-immat"> 1 </int>            <!-- 7 Show Immat -->
         <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
         <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
         <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->

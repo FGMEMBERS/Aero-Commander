@@ -18,7 +18,7 @@
     </model>
     <multiplay>
       <generic>
-        <int n="8"> 0 </int>
+        <int n="7" type="bool"> 0 </int>
       </generic>
     </multiplay>
     
