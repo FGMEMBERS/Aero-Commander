@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>temp.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needleL</object-name>
+    <object-name>needleR</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needleL</object-name>
+    <object-name>needleR</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>needleL</object-name>
+    <property>engines/engine[0]/cht-degc</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  150 </ind><dep>  75 </dep></entry>
+      <entry><ind>  300 </ind><dep> 125 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.001929 </x-m>
+      <y-m> -0.019970 </y-m>
+      <z-m> -0.000068 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needleR</object-name>
+    <property>engines/engine[1]/cht-degc</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  150 </ind><dep>  75 </dep></entry>
+      <entry><ind>  300 </ind><dep> 125 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -0.001929 </x-m>
+      <y-m>  0.019970 </y-m>
+      <z-m> -0.000068 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+</PropertyList>

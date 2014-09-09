@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>psi.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>cache</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>needle3</object-name>
+    
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>cache</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>needle3</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needle1</object-name>
+    <property>/engines/engine[1]/oil-temperature</property>
+    <interpolation>
+      <entry><ind> -50 </ind><dep> -30 </dep></entry> <!-- -50 deg C -->
+      <entry><ind>   0 </ind><dep>   0 </dep></entry> <!--   0 deg C -->
+      <entry><ind>  50 </ind><dep>  30 </dep></entry> <!--  50 deg C -->
+      <entry><ind> 100 </ind><dep>  60 </dep></entry> <!-- 100 deg C -->
+      <entry><ind> 150 </ind><dep>  90 </dep></entry> <!-- 150 deg C-->
+    </interpolation>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needle2</object-name>
+    <property>/engines/engine[1]/oil-pressure-psi</property>
+    <interpolation>
+      <entry><ind>   0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  40 </ind><dep>  50 </dep></entry>
+      <entry><ind> 100 </ind><dep>  90 </dep></entry>
+      <entry><ind> 200 </ind><dep> 180 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.000197 </x-m>
+      <y-m> -0.008138 </y-m>
+      <z-m> -0.009000 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needle3</object-name>
+    <property>/engines/engine[1]/fuel-pressure-psi</property>
+    <interpolation>
+      <entry><ind>  0 </ind><dep>   0 </dep></entry>
+      <entry><ind>  5 </ind><dep>  50 </dep></entry>
+      <entry><ind> 10 </ind><dep>  90 </dep></entry>
+      <entry><ind> 25 </ind><dep> 122 </dep></entry>
+      <entry><ind> 35 </ind><dep> 180 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m>  0.000197 </x-m>
+      <y-m>  0.008138 </y-m>
+      <z-m> -0.009000 </z-m>  
+    </center>
+    <axis> 
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

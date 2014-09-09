@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>start.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    <object-name>button</object-name>
+
+  </animation>
+
+  <animation> 
+    <type>translate</type>
+    <object-name>button</object-name>
+    <property>controls/engines/engine[1]/starter</property>
+    <factor> 0.005 </factor>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>                                                              
+
+<!--
+  <condition>
+    <equals>
+      <property>controls/engines/engine[0]/magnetos</property>
+      <value>3</value>
+    </equals>
+  </condition>
+  -->
+  <animation>
+    <type>pick</type>
+    <visible>true</visible>
+    <object-name>button</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>controls/engines/engine[1]/starter</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>controls/engines/engine[1]/starter</property>
+          <value>0</value>
+        </binding>
+      </mod-up>                     
+    </action>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="Systems/views.xml">
+
+    <description>Aero Commander 500 (YASim)</description>
+    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
+    <aircraft-version>0.1</aircraft-version>
+    <status>Alpha</status>
+
+    <fuel-fraction>1.0</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Aero-Commander/commander-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Aero-Commander/Sounds/commander-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Aero-Commander/Models/commander.xml</path>
+      <show-immat type="bool">1</show-immat>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+      <hide-yoke>true</hide-yoke>
+    </model>
+
+    <systems>
+      <autopilot>
+        <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kap140/autopilot/KAP140.xml</path>
+      </autopilot>
+      <property-rule n="100">
+        <name>FiltersOnly</name>
+        <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kap140/autopilot/NAVandGSfilters.xml</path>
+      </property-rule>
+      <electrical>
+        <!-- null electrical system path here so we can use a nasal based -->
+        <!-- model defined later in the nasal section of this file. -->
+        <path></path>
+      </electrical>
+    </systems>
+    
+    <flaps>
+      <setting> 0.00 </setting> <!--  0 deg -->
+      <setting> 0.25 </setting> <!-- 10 deg -->
+      <setting> 0.50 </setting> <!-- 20 deg -->
+      <setting> 0.75 </setting> <!-- 30 deg -->
+      <setting> 1.00 </setting> <!-- 40 deg -->
+    </flaps>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic> 
+        <int type="int" n="0">  0 </int>                                      <!-- 0 immat -->
+        <int type="int" n="1">  0 </int>                                      <!-- 1 immat -->
+        <int type="int" n="2">  0 </int>                                      <!-- 2 immat -->
+        <int type="int" n="3">  0 </int>                                      <!-- 3 immat -->
+        <int type="int" n="4">  0 </int>                                      <!-- 4 immat -->
+        <int type="int" n="5">  0 </int>                                      <!-- 5 immat -->
+        <int type="bool" n="6"> 1 </int>                                      <!-- 6 smoke/bomb/torpedo -->
+        <int type="bool" n="7" alias="/model/show-immat"> 1 </int>            <!-- 7 Show Immat -->
+        <int n="8" alias="/systems/electrical/outputs/nav-lights">  0 </int>  <!-- 8 nav-lights -->
+        <int n="9" alias="/sim/model/lights/beacon/state">  false </int>      <!-- 9 strobe-lights -->
+        <int n="10" alias="/controls/electric/key-pos">  0 </int>             <!-- 10 key position -->
+        <float n="0" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="1" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="2" alias="/position/gear-agl-m"> 0 </float>                 <!-- altitude for MP shadow -->
+        <float n="3" alias="/position/altitude-ft"> 0 </float>                <!-- altitude for Smoke/Trail -->
+        <float n="4" alias="/sim/model/door-positions/crew/position-norm"/>
+        <float n="5" alias="/sim/model/door-positions/passenger/position-norm"/>
+        <float n="6" alias="/engines/engine[0]/rpm"/>
+        <float n="7" alias="/engines/engine[0]/cranking"/>
+        <float n="8" alias="/engines/engine[1]/rpm"/>
+        <float n="9" alias="/engines/engine[1]/cranking"/>
+        <float n="10" alias="/gear/gear[0]/wow/"/>
+        <float n="11" alias="/gear/gear[1]/wow/"/>
+        <float n="12" alias="/gear/gear[2]/wow/"/>
+        <float n="13" alias="/gear/gear[0]/rollspeed-ms"/>
+        <float n="14" alias="/gear/gear[1]/rollspeed-ms"/>
+        <float n="15" alias="/gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int type="int" n="10" alias="controls/armament/trigger">0</int>
+        <string n="9" type="string" />
+      </generic>
+    </multiplay>
+    
+    <help include="Systems/help.xml"/>
+
+    <menubar include="Dialogs/commander-menu.xml"/>
+
+  </sim>
+
+  <engines>
+    <engine n="0">
+      <rpm type="float">0</rpm>
+      <egt-degC type="float">0</egt-degC>
+      <oil-temperature-degC type="float">0</oil-temperature-degC>
+    </engine>
+    <engine n="1">
+      <rpm type="float">0</rpm>
+      <egt-degC type="float">0</egt-degC>
+      <oil-temperature-degC type="float">0</oil-temperature-degC>
+    </engine>
+  </engines>
+
+  <input>
+    <keyboard include="Systems/commander-keyboard.xml"/>
+  </input>
+
+  <controls>
+    <lighting>
+      <nav-lights type="bool">false</nav-lights>
+      <instrument-lights type="bool">false</instrument-lights>
+      <landing-lights type="bool">false</landing-lights>
+    </lighting>
+    <gear>
+      <brake-parking>1</brake-parking>
+    </gear>
+  </controls>
+
+  <autopilot>
+    <KAP140>
+      <settings>
+        <auto-pitch-trim type="bool">true</auto-pitch-trim>
+      </settings>
+    </KAP140>
+  </autopilot>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Aero-Commander/Nasal/doors.nas</file>
+    </doors>
+    <commander>
+      <file>Aircraft/Aero-Commander/Nasal/liveries.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/light.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/immat.nas</file>
+    </commander>
+    <instrumentation>
+      <file>Aircraft/Aero-Commander/Nasal/instrumentation.nas</file>
+      <script>instrumentation.initIns();</script>
+    </instrumentation>
+    <kr87>
+      <file>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+
+    <kap140>
+      <file>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kap140/autopilot/kap140.nas</file>
+      <!--
+           We can set some variables that might be
+           aircraft specific. We must do it after the file
+           to override the ones that are in the .nas file.
+      
+           gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection";
+      -->
+      <script>
+        <![CDATA[ 
+          headingNeedleDeflection = "/instrumentation/nav/heading-needle-deflection";
+          gsNeedleDeflection = "/instrumentation/nav/gs-needle-deflection-norm";
+          staticPressure = "systems/static/pressure-inhg";
+        ]]>
+      </script>
+    </kap140>
+  </nasal>
+
+</PropertyList>

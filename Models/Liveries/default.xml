@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+  
+  <sim>
+    
+    <model>
+      <livery>
+        <name type="string">Default</name>
+        <texture>texture.png</texture>
+        <specular>
+          <red>   0.3 </red>
+          <green> 0.3 </green>
+          <blue>  0.3 </blue>
+        </specular>
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
+      </livery>
+      <show-immat type="bool">true</show-immat>
+    </model>
+    <multiplay>
+      <generic>
+        <int n="7" type="bool"> 1 </int>
+      </generic>
+    </multiplay>
+    
+  </sim>
+  
+</PropertyList>

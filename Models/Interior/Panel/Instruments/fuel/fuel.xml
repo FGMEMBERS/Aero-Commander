@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>fuel.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>   
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation>
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <condition>
+      <property>/controls/lighting/instrument-lights</property>
+    </condition>
+    <emission>
+      <red>   0.80 </red>
+      <green> 0.50 </green>
+      <blue>  0.50 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>consumables/fuel/tank[0]/level-lbs</property>
+    <interpolation>
+      <entry><ind>   0.000 </ind><dep>   0 </dep></entry>
+      <entry><ind> 239.960 </ind><dep>  46 </dep></entry> <!--  40 Gals -->
+      <entry><ind> 479.920 </ind><dep>  93 </dep></entry> <!--  80 Gals -->
+      <entry><ind> 719.880 </ind><dep> 140 </dep></entry> <!-- 120 Gals -->
+      <entry><ind> 809.865 </ind><dep> 149 </dep></entry> <!-- 135 Gals -->
+    </interpolation>
+    <center>
+      <x-m> -0.002689 </x-m>
+      <y-m>  0.000000 </y-m>
+      <z-m> -0.006759 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

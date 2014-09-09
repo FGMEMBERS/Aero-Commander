@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<!-- Aero Commander : 2013 - BARANGER Emmanuel
+
+          Sources   : http://en.wikipedia.org/wiki/Aero_Commander_500_family
+
+     Wingspan       : 14.95 m    ( 49 ft 0 1/2 in )
+     Length         : 11.22 m    ( 36 ft 9 3/4 in )
+     Height         :  4.42 m    ( 14 ft 6     in )
+     Moteurs        : 2 x Lycoming IO-540-E1B5 air-cooled flat-six piston engines (290 hp each)
+     Empty weight   : 4635 lb    ( 2102 kg        )
+     Cruise speed   :   176 kts  ( 326 km/h ) at 9000 ft (2750 m)
+     Max speed      :   187 kts  ( 346 km/h ) at sea level
+-->
+
+<airplane mass="4635">
+
+  <approach speed="65" aoa="6">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.4"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.4"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/flight/flaps" value="1"/>
+  </approach>
+
+  <cruise speed="176" alt="9000">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/engines/engine[1]/throttle" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[1]/mixture" value="0.7"/>
+    <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="1"/>
+    <control-setting axis="/controls/flight/flaps" value="0"/>
+  </cruise>
+
+  <cockpit x="2.930622" y="0.3" z="-0.57762"/>
+
+  <fuselage ax="5.59111" ay="0" az="-1.39666" bx="-5.58251" by="0" bz="-0.36422" width="1.368" taper="0.2" midpoint="0.25"/>
+
+  <wing x="0.52528" y="0.50702" z="-0.40303"
+        chord="2.528"
+        length="7.05"
+        dihedral="6"
+        taper="0.28"
+        sweep="-7.8"
+        camber="0.03">
+        <stall aoa="20" width="1" peak="1.5"/>
+        <flap0 start="0.019" end="0.620" lift="1.2" drag="1.1"/>
+        <flap1 start="0.620" end="1.000" lift="1.2" drag="1.1"/>
+
+        <control-input axis="/controls/flight/flaps" control="FLAP0"/>
+        <control-input axis="/controls/flight/aileron" control="FLAP1" split="true"/>
+        <control-input axis="/controls/flight/aileron-trim" control="FLAP1" split="true"/>
+
+        <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
+        <control-output control="FLAP1" side="left" prop="/surface-positions/left-aileron-pos-norm"/>
+        <control-output control="FLAP1" side="right" prop="/surface-positions/right-aileron-pos-norm"/>
+
+        <control-speed control="FLAP0" transition-time="5"/>
+  </wing>
+
+  <hstab x="-4.88381" y="0" z="-0.227"
+         chord="1.413"
+         length="2.54" 
+         taper="0.3"
+         sweep="3"
+         dihedral="10">
+         <stall aoa="18" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
+
+         <control-input axis="/controls/flight/elevator" control="FLAP0" />
+         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+  </hstab>
+
+  <vstab x="-4.34107" y="0" z="-0.34884"
+         chord="2.052"
+         length="2.66" 
+         taper="0.44"
+         sweep="14">
+         <stall aoa="16" width="1" peak="1.5"/>
+         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
+
+         <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
+
+         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+  </vstab>
+
+  <!-- Moteurs : Lycomming IGSO-540-A1E
+                 weight       : 438 lb (199 kg)
+                 Displacement : 541.5 in3 (8.87 l)
+                 Compression  : 8.7:1
+  -->
+  <propeller x="1.92752" y="1.94702" z="-0.29520"
+             mass="438" 
+             moment="2.5" 
+             radius="1.25" 
+             cruise-speed="176" 
+             cruise-rpm="2500" 
+             cruise-power="360" 
+             cruise-alt="6000"
+             takeoff-power="250"
+             takeoff-rpm="1500"> 
+             <actionpt x="2.49846" y="1.95405" z="-0.37317"/>
+             <piston-engine eng-power="380" 
+                            eng-rpm="2700"
+                            displacement="541.5"
+                            compression="8.7"/> 
+             <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[0]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[0]/magnetos" control="MAGNETOS"/>
+             <control-input axis="/controls/engines/engine[0]/mixture" control="MIXTURE"/>
+  </propeller>
+
+  <propeller x="1.92752" y="-1.94702" z="-0.29520"
+             mass="438" 
+             moment="2.5" 
+             radius="1.25" 
+             cruise-speed="176" 
+             cruise-rpm="2500" 
+             cruise-power="360" 
+             cruise-alt="6000"
+             takeoff-power="250"
+             takeoff-rpm="1500"> 
+             <actionpt x="2.49846" y="-1.95405" z="-0.37317"/>
+             <piston-engine eng-power="380" 
+                            eng-rpm="2700"
+                            displacement="541.5"
+                            compression="8.7"/>
+             <control-input axis="/controls/engines/engine[1]/propeller-pitch" control="ADVANCE"/>
+             <control-input axis="/controls/engines/engine[1]/throttle" control="THROTTLE"/>
+             <control-input axis="/controls/engines/engine[1]/starter" control="STARTER"/>
+             <control-input axis="/controls/engines/engine[1]/magnetos" control="MAGNETOS"/>
+             <control-input axis="/controls/engines/engine[1]/mixture" control="MIXTURE"/>
+  </propeller>
+
+  <!-- Noze wheel -->
+  <gear x="5.35378" y="0" z="-2.22031" 
+        compression="0.1" 
+        retract-time="7" 
+        on-water="0" 
+        on-solid="1"
+        spring="1" 
+        damp="2">
+        <control-input axis="/controls/flight/rudder" control="STEER" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="5"/>
+        <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
+  </gear>
+
+  <!-- Left wheel -->
+  <gear x="0.77452" y="1.96313" z="-2.20811"
+        compression="0.2" 
+        retract-time="7"
+        on-water="0" 
+        on-solid="1" 
+        spring="1" 
+        damp="2">
+        <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="5"/>
+        <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
+  </gear>
+
+  <!-- Right wheel -->
+  <gear x="0.77452" y="-1.96313" z="-2.20811"
+        compression="0.2" 
+        retract-time="7" 
+        on-water="0" 
+        on-solid="1"
+        spring="1" 
+        damp="2">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+        <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+        <control-speed control="EXTEND" transition-time="3.5"/>
+        <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  </gear>
+
+  <!-- 809.865 lbs = 135 gals -->
+  <tank x="1.03" y=" 2.5" z="-0.2" capacity="809.865"/>
+  <tank x="1.03" y="-2.5" z="-0.2" capacity="809.865"/>
+
+  <!-- Mass displacment -->
+  <ballast x="4" y="0" z="-2" mass="1000"/>
+
+</airplane>
