@@ -8,6 +8,20 @@
     <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
     <flight-model>yasim</flight-model>
     <aero>commander-yasim</aero>
+
+    <tags>
+      <tag>low-wing</tag>
+      <tag>tricycle</tag>
+      <tag>retractable-gear</tag>
+      <tag>twin-engine</tag>
+      <tag>piston</tag>
+      <tag>fixed-pitch</tag>
+      <tag>transport</tag>
+      <tag>1950s</tag>
+      <tag>1960s</tag>
+      <tag>1970s</tag>
+      <tag>1980s</tag>
+    </tags>
     
     <rating>
       <FDM type="int">     3 </FDM>
