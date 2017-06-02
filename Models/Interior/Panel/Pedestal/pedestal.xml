@@ -21,11 +21,22 @@
 
   <!-- KR 87 -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/kr87.xml</path>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/KN53/KN53.xml</path>
     <offsets>
       <x-m>  0.069 </x-m>
       <y-m>  0.000 </y-m>
       <z-m> -0.070 </z-m>
+      <pitch-deg> -37 </pitch-deg>
+    </offsets>
+  </model>
+
+    <!-- KR 87 -->
+  <model>
+   <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/KT76A/KT76A.xml</path>
+    <offsets>
+      <x-m>  0.105 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.120 </z-m>
       <pitch-deg> -37 </pitch-deg>
     </offsets>
   </model>

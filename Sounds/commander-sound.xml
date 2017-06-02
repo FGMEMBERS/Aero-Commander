@@ -207,14 +207,20 @@
       <mode>looped</mode>
       <path>Sounds/rumble.wav</path>
       <condition>
+	  <and>
+	  <greater-than>
+	  <property>velocities/airspeed-kt</property>
+	  <value>10</value>
+	  </greater-than>
         <or>
-          <property>/gear/gear[0]/wow</property>
-          <property>/gear/gear[1]/wow</property>
-          <property>/gear/gear[2]/wow</property>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
         </or>
+		</and>
       </condition>
       <volume>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <type>log</type>
         <factor>0.5</factor>
       </volume>
@@ -276,7 +282,7 @@
       <name>flaps</name>
       <mode>in-transit</mode>
       <path>Sounds/flaps.wav</path>
-      <property>/surface-positions/flap-pos-norm</property>
+      <property>surface-positions/flap-pos-norm</property>
       <volume>
         <offset>0.25</offset>
       </volume>
@@ -286,22 +292,22 @@
       <name>wind</name>
       <mode>looped</mode>
       <path>Sounds/wind.wav</path>
-      <property>/velocities/airspeed-kt</property>
+      <property>velocities/airspeed-kt</property>
       <volume>
-        <property>/position/altitude-ft</property>
+        <property>position/altitude-ft</property>
         <factor>-0.000015</factor>
         <offset>1.0</offset>
         <min>0.1</min>
         <max>1.0</max>
       </volume>
       <volume>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.0015</factor>
         <min>0.03</min>
         <max>0.25</max>
       </volume>
       <pitch>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <factor>0.01</factor>
         <offset>1.25</offset>
       </pitch>
@@ -310,9 +316,9 @@
     <stall>
       <name>stall</name>
       <path>Sounds/stall.wav</path>
-      <property>/sim/aero/alarms/stall-warning</property>
+      <property>sim/aero/alarms/stall-warning</property>
       <volume>
-        <property>/velocities/airspeed-kt</property>
+        <property>velocities/airspeed-kt</property>
         <min>30.0</min>
       </volume>
     </stall>

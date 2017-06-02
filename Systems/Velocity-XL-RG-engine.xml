@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<engine>
+  <engine-model>Lycoming IO-540-K</engine-model>
+  <displacement-in type="float">541.5</displacement-in>
+  <cylinders type="float">6</cylinders>
+  <rpm-max type="float">2700</rpm-max>
+  <power-max type="float">300</power-max>
+  <cht-redline type="float">400</cht-redline>				<!-- Could be cert redline or user's personal limit; used for instrument animations -->
+  <volumetric-efficiency type="float">0.87</volumetric-efficiency>	<!-- Get from engine data or make a guestimate -->
+  <thermal-efficiency type="float">0.283</thermal-efficiency>		<!-- Get from engine datasheet or calculate an estimate -->
+  <afr-base type="float">0.085</afr-base>				<!-- Unadjusted full-power, full-rich air-fuel ratio -->
+  <idle-min-inhg>10</idle-min-inhg>					<!-- MP to seek at sea level idle -->
+  <use-AMC type="bool">0</use-AMC>					<!-- Enable if engine uses Automatic Mixture Control (alititude compensator) -->
+  <use-autoenrich type="bool">1</use-autoenrich>			<!-- Enable if engine has an autoenrich power feature -->
+  <autoenrich-throttle-min type="float">0.65</autoenrich-throttle-min>	<!-- Minimum throttle setting where autoenrich starts to kick in -->
+  <autoenrich-afr-gain type="float">0.005</autoenrich-afr-gain>		<!-- Full-throttle autoenrich gain to AFR (max = afr-base + autoenrich-afr-gain)-->
+  <use-boostpump type="bool">1</use-boostpump>				<!-- Enable if engine has a boost pump that affects fuel inlet pressure -->
+  <boostpump-afr-gain type="float">0.0025</boostpump-afr-gain>		<!-- Boost pump increases AFR by this value -->
+  <cowlflaps type="bool">0</cowlflaps>					<!-- Enable if engine has cowlflaps (not implemented) -->
+									<!-- Most fuel data can be found on cert sheets: -->
+  <fuel-pressure-max>31</fuel-pressure-max>				<!-- Typical upper-end fuel pressure -->
+  <fuel-pressure-idle>15</fuel-pressure-idle>				<!-- Typical lower-end fuel pressure -->
+  <fuel-pressure-min>12</fuel-pressure-min>				<!-- Minimum operational fuel pressure -->
+  <fuel-pressure-boost>4</fuel-pressure-boost>				<!-- Boost pump PSI gain -->
+
+<!--
+Interpolation tables:
+These work much like the animation interpolation function. Choose one column for the index input, choose another
+for the dependent output, and feed it an index value. See the nasal engine code for examples.
+-->
+
+<!--
+Mixture-correction does two things: it aligns my engine scheme's best-power numbers to YASim's best-power
+mixture settings, and it corrects for YASim's linear mixture control settings that would otherwise yield
+mixtures much too lean to burn at low-end lean settings.
+
+The numbers were derived by flying at altitude intervals of 1000' starting at just above SL, and noting the YASim mixture
+control setting that yielded best-power (thrust) and pairing these with calculated (optimal) values assuming a best-power
+AFR of 0.8 (the high-end of theoretical best-power). The numbers give reasonable results up to 12,000' feet or so, above
+which things start getting a bit extreme and doesn't matter a whole lot for a normally-aspirated piston engine that
+probably shouldn't be up there anyway. I welcome other ideas for how to do this, but the solution seems to work.
+-->
+
+  <table-mixture-correction>
+    <mix><mix-ind type="float">0.00</mix-ind><mix-opt type="float">0.28</mix-opt></mix>
+    <mix><mix-ind type="float">0.51</mix-ind><mix-opt type="float">0.545</mix-opt></mix>
+    <mix><mix-ind type="float">0.54</mix-ind><mix-opt type="float">0.566</mix-opt></mix>
+    <mix><mix-ind type="float">0.56</mix-ind><mix-opt type="float">0.588</mix-opt></mix>
+    <mix><mix-ind type="float">0.575</mix-ind><mix-opt type="float">0.611</mix-opt></mix>
+    <mix><mix-ind type="float">0.59</mix-ind><mix-opt type="float">0.634</mix-opt></mix>
+    <mix><mix-ind type="float">0.62</mix-ind><mix-opt type="float">0.657</mix-opt></mix>
+    <mix><mix-ind type="float">0.63</mix-ind><mix-opt type="float">0.684</mix-opt></mix>
+    <mix><mix-ind type="float">0.64</mix-ind><mix-opt type="float">0.710</mix-opt></mix>
+    <mix><mix-ind type="float">0.65</mix-ind><mix-opt type="float">0.730</mix-opt></mix>
+    <mix><mix-ind type="float">0.70</mix-ind><mix-opt type="float">0.800</mix-opt></mix>
+    <mix><mix-ind type="float">0.77</mix-ind><mix-opt type="float">0.880</mix-opt></mix>
+    <mix><mix-ind type="float">1.00</mix-ind><mix-opt type="float">1.000</mix-opt></mix>
+  </table-mixture-correction>
+
+<!--
+Temperature table maps AFRs to EGTs and CHTs. CHTs should assume max-power ground operation (no airspeed cooling).
+These values are calculated, theoretical, come from real data, or are otherwise guesstimates.
+They should be maximums; the final result will be attenuated by engine power.
+CHTs will also be reduced somewhat by airspeed.
+-->
+
+  <table-temps>
+    <temps><afr type="float">0.0400</afr><egt type="int">1000</egt><cht type="int">250</cht></temps> <!-- lean burn limit -->
+    <temps><afr type="float">0.0500</afr><egt type="int">1000</egt><cht type="int">250</cht></temps> <!-- lean power limit -->
+    <temps><afr type="float">0.0625</afr><egt type="int">1450</egt><cht type="int">345</cht></temps> <!-- best economy -->
+    <temps><afr type="float">0.0712</afr><egt type="int">1500</egt><cht type="int">433</cht></temps> <!-- peak EGT -->
+    <temps><afr type="float">0.0756</afr><egt type="int">1450</egt><cht type="int">450</cht></temps> <!-- peak CHT -->
+    <temps><afr type="float">0.0800</afr><egt type="int">1420</egt><cht type="int">440</cht></temps> <!-- best power -->
+    <temps><afr type="float">0.0870</afr><egt type="int">1350</egt><cht type="int">375</cht></temps>
+    <temps><afr type="float">0.1000</afr><egt type="int">1250</egt><cht type="int">355</cht></temps> <!-- WOT, full rich -->
+    <temps><afr type="float">0.1250</afr><egt type="int">1250</egt><cht type="int">350</cht></temps> <!-- rich power limit -->
+    <temps><afr type="float">0.1800</afr><egt type="int">1250</egt><cht type="int">350</cht></temps> <!-- rich burn limit -->
+  </table-temps>
+
+<!--
+Cylinder temperature differences: These are deviations from max-power AFR temps. Due to differences in fuel flow, air flow,
+manufacturing tolerances, spark, etc., each engine cylinder will vary by some amount from the base calculated value. This
+table is used to specify the desired differences. A value of 1.0 indicates no variation from calculated, 1.02 indicates 2%
+greater than calculated. For injected engines, all cylinders should fall within 50 to 90 degrees F EGT, in other words, no
+value should be more than 90 degrees hotter than the lowest value. For carbureted engines, the span is typically 100 to 150
+degrees F EGT. Limit percentages accordingly.
+Currently CHTs vary using the same factors as EGT, but it would be trivial to define a separate column for CHT
+values. In real life cylinder EGTs and CHTs may not vary proportionally, which often indicates an engine problem.
+Cylinders should be defined in ascending order.
+These values are defaults. They could be randomized at run-time.
+-->
+
+  <table-cyldifs>
+    <difs><egt type="float">1.030</egt></difs>
+    <difs><egt type="float">1.010</egt></difs>
+    <difs><egt type="float">0.990</egt></difs>
+    <difs><egt type="float">1.000</egt></difs>
+    <difs><egt type="float">0.970</egt></difs>
+    <difs><egt type="float">0.986</egt></difs>
+  </table-cyldifs>
+
+<!--
+Airspeed CHT cooling benefits
+A lot of wild guessing, I haven't spent much time on this, mostly because I lack data.
+-->
+
+  <table-aircooling>
+    <aircooling><kias type="int">  0</kias><degrees type="int"> 0</degrees></aircooling>
+    <aircooling><kias type="int">205</kias><degrees type="int">30</degrees></aircooling>
+  </table-aircooling>
+
+<!--
+Seconds/deg CHT cooldown with airspeed benefits
+This is how many seconds it takes for a cylinder to cool down 1 degree. Less air movement,
+less cooling. More wild guessing, and assumes simple air cooling.
+-->
+
+  <table-dT-cooldown>
+    <aircooling><kias type="int">  0</kias><degrees type="int">20</degrees></aircooling>
+    <aircooling><kias type="int">205</kias><degrees type="int"> 1</degrees></aircooling>
+  </table-dT-cooldown>
+
+<!--
+Cowl flaps CHT cooling benefits (not yet implemented)
+Easy to implement, but I haven't needed this yet.
+-->
+
+  <table-cowlflaps>
+    <cowlflaps><position type="float">0</position><degrees type="int"> 0</degrees></cowlflaps>
+    <cowlflaps><position type="float">1</position><degrees type="int">15</degrees></cowlflaps>
+  </table-cowlflaps>
+
+<!--
+The following are not currently implmented simulation options.
+This is legacy stuff from my Goose simulation which gave options to warn the user if
+engine values exceeded recommended values, or check for engine failures for extreme
+situation. I'm likely to implement the warnings at some point, but not the checks.
+-->
+
+  <engine-checks type="bool">false</engine-checks>			<!-- Enable if engine failure checks are used -->
+  <engine-warns type="bool">false</engine-warns>			<!-- Enable if engine limit warnings are used -->
+</engine>
+
+</PropertyList>
+

@@ -19,12 +19,11 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>noshadow</type>
     <object-name>vitre</object-name>
-  </effect>
-  
+  </animation>
+
   <animation>
     <type>material</type>
     <object-name>KI227.card</object-name>

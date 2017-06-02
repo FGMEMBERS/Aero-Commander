@@ -7,6 +7,7 @@
   <animation>
     <!-- Objets opaques -->
     <object-name>overhead</object-name>
+	<object-name>batt</object-name>
     
     <!-- Objets transparents -->
   </animation>
@@ -52,8 +53,168 @@
       <heading-deg> -8 </heading-deg>
     </offsets>
   </model>
+  
+      <animation>
+        <type>rotate</type>
+        <object-name>batt</object-name>
+        <property>controls/electric/battery-switch</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -3 </dep></entry>
+      <entry><ind> 1 </ind><dep> 5 </dep></entry>
+    </interpolation>
+        <center>
+            <x-m>0.04767</x-m>
+            <y-m>-0.32821</y-m>
+            <z-m>0.00917</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	    <animation>
+        <type>pick</type>
+        <object-name>batt</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/battery-switch</property>
+            </binding>
+        </action>
+    </animation>
+	
+	      <animation>
+        <type>rotate</type>
+        <object-name>gen</object-name>
+        <property>controls/electric/engine/generator</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -3 </dep></entry>
+      <entry><ind> 1 </ind><dep> 5 </dep></entry>
+    </interpolation>
+        <center>
+            <x-m>0.04347</x-m>
+            <y-m>-0.30981</y-m>
+            <z-m>0.00917</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+	    <animation>
+        <type>pick</type>
+        <object-name>gen</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/electric/engine/generator</property>
+            </binding>
+        </action>
+    </animation>
+	
+		      <animation>
+        <type>rotate</type>
+        <object-name>LightSwitch</object-name>
+        <property>controls/switches/landing-lights-switch</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -45 </dep></entry>
+      <entry><ind> 1 </ind><dep> 45 </dep></entry>
+    </interpolation>
+        <center>
+            <x-m>0.03827</x-m>
+            <y-m>-0.27767</y-m>
+            <z-m>0.00458</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+		    <animation>
+        <type>pick</type>
+        <object-name>LightSwitch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/switches/landing-lights-switch</property>
+            </binding>
+        </action>
+    </animation>
+	
+			      <animation>
+        <type>rotate</type>
+        <object-name>NavSwitch</object-name>
+        <property>controls/switches/nav-lights-switch</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -45 </dep></entry>
+      <entry><ind> 1 </ind><dep> 45 </dep></entry>
+    </interpolation>
+        <center>
+            <x-m>0.03528</x-m>
+            <y-m>-0.26213</y-m>
+            <z-m>0.00324</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+		    <animation>
+        <type>pick</type>
+        <object-name>NavSwitch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/switches/nav-lights-switch</property>
+            </binding>
+        </action>
+    </animation>
+	
+				      <animation>
+        <type>rotate</type>
+        <object-name>StrobeSwitch</object-name>
+        <property>controls/switches/strobe-switch</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> -45 </dep></entry>
+      <entry><ind> 1 </ind><dep> 45 </dep></entry>
+    </interpolation>
+        <center>
+            <x-m>0.03395</x-m>
+            <y-m>-0.24509</y-m>
+            <z-m>0.00224</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+	
+		    <animation>
+        <type>pick</type>
+        <object-name>StrobeSwitch</object-name>
+        <action>
+            <button>0</button>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/switches/strobe-switch</property>
+            </binding>
+        </action>
+    </animation>
 
-  <model>
+  <!-- <model>
     <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/land-lights.xml</path>
     <offsets>
       <x-m>  0.034 </x-m>
@@ -112,5 +273,16 @@
       <heading-deg> -8 </heading-deg>
     </offsets>
   </model>
+  
+    <model>
+    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/Instruments/Switch/batt.xml</path>
+    <offsets>
+      <x-m>  0.034 </x-m>
+      <y-m> -0.200 </y-m>
+      <z-m>  0.010 </z-m>
+      <heading-deg> -8 </heading-deg>
+    </offsets>
+  </model> -->
+
 
 </PropertyList>

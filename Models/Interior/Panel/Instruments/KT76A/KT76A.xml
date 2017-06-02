@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>KT76A.ac</path>
+
+  <animation>
+    <object-name>KnobMode</object-name>
+    <object-name>ModeUp</object-name>
+    <object-name>ModeDn</object-name>
+    <object-name>Ident</object-name>
+    <object-name>Dial1</object-name>
+    <object-name>Knob1</object-name>
+    <object-name>1Dn</object-name>
+    <object-name>1Up</object-name>
+    <object-name>Dial10</object-name>
+    <object-name>Knob10</object-name>
+    <object-name>10Dn</object-name>
+    <object-name>10Up</object-name>
+    <object-name>Dial100</object-name>
+    <object-name>Knob100</object-name>
+    <object-name>100Dn</object-name>
+    <object-name>100Up</object-name>
+    <object-name>Dial1000</object-name>
+    <object-name>Knob1000</object-name>
+    <object-name>1000Dn</object-name>
+    <object-name>1000Up</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>Aircraft/Grob-G115/Models/Effects/Glass/glass</inherits-from>
+    <object-name>vitre</object-name>
+  </effect>
+  
+  <animation> 
+    <type>rotate</type>
+    <object-name>Dial1000</object-name>
+    <property>instrumentation/kt76a/digit1</property>
+    <factor>45</factor>
+    <center>
+      <x-m>  0.004 </x-m>
+      <y-m> -0.018 </y-m>
+      <z-m>  0.019 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Knob1000</object-name>
+    <property>instrumentation/kt76a/digit1</property>
+    <factor>45</factor>
+    <center>
+      <x-m>  0.014 </x-m>
+      <y-m> -0.018 </y-m>
+      <z-m>  0.021 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>1000Dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit1</property>
+        <step type="int">-1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>1000Up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit1</property>
+        <step type="int">1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Dial100</object-name>
+    <property>instrumentation/kt76a/digit2</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.009 </y-m>
+      <z-m> 0.019 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Knob100</object-name>
+    <property>instrumentation/kt76a/digit2</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.014 </x-m>
+      <y-m> 0.009 </y-m>
+      <z-m> 0.021 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>100Dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit2</property>
+        <step type="int">-1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>100Up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit2</property>
+        <step type="int">1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Dial10</object-name>
+    <property>instrumentation/kt76a/digit3</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.036 </y-m>
+      <z-m> 0.019 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Knob10</object-name>
+    <property>instrumentation/kt76a/digit3</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.014 </x-m>
+      <y-m> 0.036 </y-m>
+      <z-m> 0.021 </z-m>  
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>10Dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit3</property>
+        <step type="int">-1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>10Up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit3</property>
+        <step type="int">1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Dial1</object-name>
+    <property>instrumentation/kt76a/digit4</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.004 </x-m>
+      <y-m> 0.063 </y-m>
+      <z-m> 0.019 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>Knob1</object-name>
+    <property>instrumentation/kt76a/digit4</property>
+    <factor>45</factor>
+    <center>
+      <x-m> 0.014 </x-m>
+      <y-m> 0.063 </y-m>
+      <z-m> 0.021 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>1Dn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit4</property>
+        <step type="int">-1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>1Up</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/digit4</property>
+        <step type="int">1</step>
+        <min>0</min>
+        <max>8</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>ModeUp</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/mode</property>
+        <step type="int">1</step>
+        <min>0</min>
+        <max>4</max>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>ModeDn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>/instrumentation/kt76a/mode</property>
+        <step type="int">-1</step>
+        <min>0</min>
+        <max>4</max>
+      </binding>
+    </action>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>KnobMode</object-name>
+    <property>instrumentation/kt76a/mode</property>
+    <factor>45</factor>
+    <center>
+      <x-m>  0.014 </x-m>
+      <y-m> -0.061 </y-m>
+      <z-m>  0.021 </z-m>
+    </center>
+    <axis> 
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <visible>false</visible>
+    <object-name>Ident</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/instrumentation/kt76a/ident</property>
+        <value type="bool">true</value>
+      </binding>          
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/instrumentation/kt76a/ident</property>
+          <value type="bool">false</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+
+</PropertyList>

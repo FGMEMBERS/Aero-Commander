@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!--
+Velocity XL-5-RG
+Gary R. Neely 'Buckaroo', Nov 2011
+-->
+
+<PropertyList>
+
+  <engine n="0">
+    <mix-adj type="float">0</mix-adj>
+    <afr type="float">0</afr>
+    <egttempf type="float">15.0</egttempf>
+    <chttempf type="float">15.0</chttempf>
+    <chttempf-target type="float">15.0</chttempf-target>
+    <fuel-press type="float">0.0</fuel-press>
+    <fuel-consumed-lbs-adj type="float">0.0</fuel-consumed-lbs-adj>
+    <fuel-flow-gph-adj type="float">0.0</fuel-flow-gph-adj>
+    <hp type="float">0</hp>
+    <mp-inhg type="float">0.0</mp-inhg>
+    <mp-inhg-adj type="float">17.00</mp-inhg-adj>
+    <oiltempc type="float">15.0</oiltempc>
+    <oil-visc type="float">1</oil-visc>
+    <oil-press type="float">115</oil-press>
+    <cyl n="0">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+    <cyl n="1">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+    <cyl n="2">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+    <cyl n="3">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+    <cyl n="4">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+    <cyl n="5">
+      <egt type="float">0</egt>
+      <cht type="float">0</cht>
+      <cht-redline type="int">0</cht-redline>
+    </cyl>
+  </engine>
+
+</PropertyList>
+

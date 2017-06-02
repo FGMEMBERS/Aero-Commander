@@ -7,18 +7,23 @@
     <model>
       <livery>
         <name type="string">texture 2049</name>
-        <texture>Liveries/2048x2048/texture2049.png</texture>
+        <texture>Liveries/texture2049.png</texture>
         <specular>
           <red>   0.3 </red>
           <green> 0.3 </green>
           <blue>  0.3 </blue>
         </specular>
+        <emission>
+          <red>   0.2 </red>
+          <green> 0.2 </green>
+          <blue>  0.2 </blue>
+        </emission>
       </livery>
       <show-immat type="bool">false</show-immat>
     </model>
     <multiplay>
       <generic>
-        <int n="7" type="bool"> 0 </int>
+        <int n="8"> 0 </int>
       </generic>
     </multiplay>
     

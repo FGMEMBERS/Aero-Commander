@@ -1,35 +1,21 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="commander-base.xml">
-  
+<!-- <PropertyList include="commander-jsbsim-cnf.xml"> -->
+<PropertyList include="commander-yasim-cnf.xml">
+
   <sim>
 
     <description>Aero Commander 500 (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
-    <flight-model>yasim</flight-model>
-    <aero>commander-yasim</aero>
+    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel),Avionix, Enrogue, Garry Brown</author>
 
-    <tags>
-      <tag>low-wing</tag>
-      <tag>tricycle</tag>
-      <tag>retractable-gear</tag>
-      <tag>twin-engine</tag>
-      <tag>piston</tag>
-      <tag>fixed-pitch</tag>
-      <tag>transport</tag>
-      <tag>1950s</tag>
-      <tag>1960s</tag>
-      <tag>1970s</tag>
-      <tag>1980s</tag>
-    </tags>
-    
     <rating>
       <FDM type="int">     3 </FDM>
       <systems type="int"> 2 </systems>
-      <cockpit type="int"> 4 </cockpit>
+      <cockpit type="int"> 3 </cockpit>
       <model type="int">   4 </model>
     </rating>
 
   </sim>
 
 </PropertyList>
+

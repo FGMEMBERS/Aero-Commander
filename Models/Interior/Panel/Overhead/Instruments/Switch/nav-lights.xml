@@ -16,7 +16,7 @@
     <object-name>base</object-name>
     <object-name>info</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>controls/lighting/instrument-lights</property>
     </condition>
     <emission>
       <red>   0.80 </red>
@@ -35,12 +35,15 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>controls/lighting/nav-lights</property>
+        <property>controls/switches/nav-lights-switch</property>
       </binding>
       <binding>
-        <command>property-assign</command>
-        <property>controls/lighting/beacon</property>
-        <property>controls/lighting/nav-lights</property>
+        <command>property-toggle</command>
+        <property>controls/switches/beacon-switch</property>
+      </binding>
+	   <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/strobe-switch</property>
       </binding>
       <binding>
         <command>property-toggle</command>
@@ -52,7 +55,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Switch</object-name>
-    <property>/controls/lighting/nav-lights</property>
+     <property>controls/switches/nav-lights-switch</property>
     <factor> 35 </factor>
     <axis>
       <x>  0 </x>
@@ -62,3 +65,5 @@
   </animation>
 
 </PropertyList>
+
+

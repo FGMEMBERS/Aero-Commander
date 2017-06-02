@@ -1,21 +1,19 @@
-# **********************************
-# **** 5H1N0B1             2013 ****
-# ****                          ****
-# **** Updated Chris BROWN 2014 ****
-# **********************************
+# **********************
+# **** 5H1N0B1 2013 ****
+# **********************
 
 var initIns = func {
   temperature();
   pression();
-  
-  settimer(initIns, 0.1);
-  settimer(chtegt, 1);
+
+  settimer(initIns, 0.5);
 }
+
 
 var temperature = func{
         
-  #setprop("engines/engine[0]/egt-degC", convertTemp(getprop("engines/engine[0]/egt-degf")));
-  #setprop("engines/engine[1]/egt-degC", convertTemp(getprop("engines/engine[1]/egt-degf")));
+  setprop("engines/engine[0]/egt-degC", convertTemp(getprop("engines/engine[0]/egt-degf")));
+  setprop("engines/engine[1]/egt-degC", convertTemp(getprop("engines/engine[1]/egt-degf")));
   setprop("engines/engine[0]/oil-temperature-degC", convertTemp(getprop("engines/engine[0]/oil-temperature-degf")));
   setprop("engines/engine[1]/oil-temperature-degC", convertTemp(getprop("engines/engine[1]/oil-temperature-degf")));
         
@@ -30,93 +28,198 @@ var convertTemp = func(degF) {
 
 }
 
-var chtegt = func() {
-  var rpm0 = getprop("/engines/engine[0]/rpm");
-  var rpm1 = getprop("/engines/engine[1]/rpm");
-  var oat = getprop("/environment/temperature-degc"); 
-  var cht0 = getprop("/engines/engine[0]/cht-degc");
-  var cht1 = getprop("/engines/engine[1]/cht-degc");
-  var egt0 = getprop("/engines/engine[0]/egt-degc");
-  var egt1 = getprop("/engines/engine[1]/egt-degc");
-  var mp0 = getprop("/engines/engine[0]/mp-osi");
-  var mp1 = getprop("/engines/engine[1]/mp-osi");
-  var run0 = getprop("/engines/engine[0]/running");
-  var run1 = getprop("/engines/engine[1]/running");
-  var flow0 = getprop("/engines/engine[0]/fuel-flow-gph");
-  var flow1 = getprop("/engines/engine[1]/fuel-flow-gph");
-  var oilt0 = getprop("/engines/engine[0]/oil-temperature");
-  var oilt1 = getprop("/engines/engine[1]/oil-temperature");
-  var ias = getprop("/instrumentation/airspeed-indicator/indicated-speed-kt");
-
-  if (mp0 < 10) { mp0 = 10; }
-  if (mp1 < 10) { mp1 = 10; }
-  
-  #Engine 0
-  if (run0) {
-    cht0  = cht0 + (mp0 * 8 + oat - ias/3 - cht0) / 250;
-    egt0  = egt0 + ((mp0 * 30 + cht0 * 2) * mp0 / (flow0 * 2 + 1) - egt0) / 100;
-    oilt0 = oilt0 +(rpm0 / 25 + oat - oilt0) / 250;
-  } else {
-  if ( ! cht0  ) { cht0 = oat;}
-  if ( ! egt0  ) { egt0 = oat;}
-    if ( ! oilt0 ) { oilt0 = oat;}
-  cht0 = cht0 + (oat - cht0)/100;
-  egt0 = egt0 + (oat - egt0)/100;
-    oilt0 = oilt0 + (oat - oilt0)/100;
-  }
-  #Engine 1
-  if (run1) {
-    cht1  = cht1 + (mp1 * 8 + oat - ias/3 - cht1) / 250;
-    egt1  = egt1 + ((mp1 * 30 + cht1 * 2) * mp1 / (flow1 * 2 + 1) - egt1) / 100;
-    oilt1 = oilt1 +(rpm1 / 25 + oat - oilt1) / 250;
-  } else {
-  if ( ! cht1  ) { cht1 = oat;}
-  if ( ! egt1  ) { egt1 = oat;}
-    if ( ! oilt1 ) { oilt1 = oat;}
-  cht1 = cht1 + (oat - cht1)/100;
-  egt1 = egt1 + (oat - egt1)/100;
-    oilt1 = oilt1 + (oat - oilt1)/100;
-  }
-  
-  setprop("/engines/engine[0]/cht-degc", cht0);
-  setprop("/engines/engine[1]/cht-degc", cht1);
-  setprop("/engines/engine[0]/oil-temperature", oilt0);
-  setprop("/engines/engine[1]/oil-temperature", oilt1);
-  setprop("/engines/engine[0]/egt-degc", egt0);
-  setprop("/engines/engine[1]/egt-degc", egt1);
-  setprop("/engines/engine[0]/egt-degf-calc", egt0 * 9/5 + 32);
-  setprop("/engines/engine[1]/egt-degf-calc", egt1 * 9/5 + 32);
-  setprop("/systems/electrical/amp", (rpm0 + rpm1) / 100 );
-    
-}
-  
 var pression= func(){
 
   var rpm0 = getprop("/engines/engine[0]/rpm");
   var rpm1 = getprop("/engines/engine[1]/rpm");
   
   #Engine 0
-  if (rpm0 > 100.0) {
-      var fuel_pres0 = rpm0 / 100;
-      var oil_pres0 = rpm0 / 25; 
+  if (rpm0 > 600.0) {
+      var fuel_pres0 = rpm0 / 258.82 - 1.43;
+      var oil_pres0 = rpm0 / 33.85 + 10.25; 
   }else{
           var fuel_pres0 = 0.0;
           var oil_pres0 = 0.0;
   }
     
   #Engine 1
-  if (rpm1 > 100.0) {
-      var fuel_pres1 = rpm1 / 100;
-      var oil_pres1 = rpm1 / 25;
+  if (rpm1 > 600.0) {
+      var fuel_pres1 = rpm1 / 258.82 - 1.43;
+      var oil_pres1 = rpm1 / 33.85 + 10.25;
   } else { 
       var fuel_pres1 = 0.0;
       var oil_pres1 = 0.0;
   }
-  
+    
   setprop("/engines/engine[0]/oil-pressure-psi", oil_pres1);
   setprop("/engines/engine[1]/oil-pressure-psi", oil_pres0);
     
   setprop("/engines/engine[0]/fuel-pressure-psi", fuel_pres1);
   setprop("/engines/engine[1]/fuel-pressure-psi", fuel_pres0);  
-      
+    
 }
+# set the timer for the selected function
+
+var UPDATE_PERIOD = 0;
+
+instrumenttimers = func {
+
+  settimer(gmeterUpdate, UPDATE_PERIOD);
+  settimer(MixtureGate, UPDATE_PERIOD);
+  settimer(func {radiodisplay("comm[0]")}, UPDATE_PERIOD);
+  settimer(func {radiodisplay("nav[0]")}, UPDATE_PERIOD);
+  settimer(func {radiodisplay("nav[1]")}, UPDATE_PERIOD);
+
+}
+
+# =============================== end timer stuff ===========================================
+
+# =============================== G-Meter stuff =============================================
+
+gmeterUpdate = func {
+
+  var GCurrent = props.globals.getNode("/accelerations/pilot-g[0]").getValue();
+  var GMin = props.globals.getNode("/accelerations/pilot-gmin[0]").getValue();
+  var GMax = props.globals.getNode("/accelerations/pilot-gmax[0]").getValue();
+
+  if(GCurrent < GMin)
+  { if (GCurrent > -6) 
+    { setprop("/accelerations/pilot-gmin[0]", GCurrent);
+          }
+          else
+          { setprop("/accelerations/pilot-gmin[0]", -6);
+          }
+  }
+  elsif(GCurrent > GMax)
+  { if(GCurrent < 10) 
+          { setprop("/accelerations/pilot-gmax[0]", GCurrent);
+          }
+          else
+          { setprop("/accelerations/pilot-gmax[0]", 10);
+          }
+  }
+
+  instrumenttimers();
+
+}
+
+# =============================== Mixture Gate  =============================================
+
+MixtureGate = func {
+
+  var GateState = props.globals.getNode("/controls/engines/engine[0]/mixturegate").getValue();
+  var MixVal = props.globals.getNode("/controls/engines/engine[0]/mixture").getValue();
+  var MixMin = 0.33;
+
+  if((MixVal < MixMin) and GateState)
+  { 
+    setprop("/controls/engines/engine[0]/mixture", MixMin);
+  }
+
+}
+
+# ==================== Radio Frequency Display =========================
+
+radiodisplay = func(radio) {
+  var selected=getprop("/instrumentation/"~radio~"/frequencies/selected-mhz");
+  var formatted=sprintf("%.02f",selected);
+
+  var digit1=substr(formatted,0,1);
+  var digit2=substr(formatted,1,1);
+  var digit3=substr(formatted,2,1);
+  var digit4=substr(formatted,4,1);
+  var digit5=substr(formatted,5,1);
+
+  setprop("instrumentation/"~radio~"/selected/digit1",digit1);
+  setprop("instrumentation/"~radio~"/selected/digit2",digit2);
+  setprop("instrumentation/"~radio~"/selected/digit3",digit3);
+  setprop("instrumentation/"~radio~"/selected/digit4",digit4);
+  setprop("instrumentation/"~radio~"/selected/digit5",digit5);
+
+  var standby=getprop("/instrumentation/"~radio~"/frequencies/standby-mhz");
+  var formatted=sprintf("%.02f",standby);
+
+  digit1=substr(formatted,0,1);
+  digit2=substr(formatted,1,1);
+  digit3=substr(formatted,2,1);
+  digit4=substr(formatted,4,1);
+  digit5=substr(formatted,5,1);
+  
+  setprop("instrumentation/"~radio~"/standby/digit1",digit1);
+  setprop("instrumentation/"~radio~"/standby/digit2",digit2);
+  setprop("instrumentation/"~radio~"/standby/digit3",digit3);
+  setprop("instrumentation/"~radio~"/standby/digit4",digit4);
+  setprop("instrumentation/"~radio~"/standby/digit5",digit5);
+
+}
+
+####################### Initialise ##############################################
+
+initialize = func {
+
+  ### Initialise Mixture Gate ###
+  props.globals.getNode("/controls/engines/engine[0]/mixturegate", 1).setBoolValue(0);
+
+  ### Initialise gmeter ###
+  props.globals.getNode("accelerations/pilot-g[0]", 1).setDoubleValue(1.01);
+  props.globals.getNode("accelerations/pilot-gmin[0]", 1).setDoubleValue(1);
+  props.globals.getNode("accelerations/pilot-gmax[0]", 1).setDoubleValue(1);
+
+  ### Initialise Warning Panel ###
+  props.globals.getNode("/instrumentation/warning-panel/test", 1).setBoolValue(0);
+  props.globals.getNode("/instrumentation/warning-panel/night", 1).setBoolValue(0);
+  props.globals.getNode("/instrumentation/warning-panel/lovolt-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("/instrumentation/warning-panel/gen-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("/instrumentation/warning-panel/looil-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("/instrumentation/warning-panel/fuel-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("/instrumentation/warning-panel/starter-norm", 1).setDoubleValue(0.0);
+
+  ### Initialise Radios ###
+  props.globals.getNode("instrumentation/uhf/commvol-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("instrumentation/kn53/navvol-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("instrumentation/kx155a/commvol-norm", 1).setDoubleValue(0.0);
+  props.globals.getNode("instrumentation/kx155a/navvol-norm", 1).setDoubleValue(0.0);
+
+  ### Initialise electrical stuff  (move to electric system init once electrical system exists complete) ###
+  props.globals.getNode("controls/circuit-breakers/start-ctrl", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/gen-ctrl", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/strobe-white", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/strobe-red", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/panel-lights", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/avionic-blower", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/pitot-heat", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/fuel-pump", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/eng-instr-2", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/gps", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/com2-nav2", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/avionic-bus-2", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/dme", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/audio-marker", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/att-indic-2", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/land-light", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/map-light", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/nav-lights", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/eng-instr-1", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/instr-lights", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/rpm-ind", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/lo-volt-warning", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/tands", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/fuel-lo-lev", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/att-indic-1", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/stall-warning", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/ess-bus", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/main-bus", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/gen", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/avionic-relay", 1).setBoolValue(1);
+  props.globals.getNode("controls/circuit-breakers/flaps", 1).setBoolValue(1);
+
+  instrumenttimers();
+  # Finished Initialising
+  print ("Instruments : initialised");
+  var initialized = 1;
+
+} #end func
+
+######################### Fire it up ############################################
+setlistener("/sim/signals/electrical-initialized",initialize);
+

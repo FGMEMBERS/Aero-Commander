@@ -98,13 +98,26 @@ properties' values.
     <!-- Objets transparents -->
     <object-name>vitre</object-name>
   </animation>
-
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
-    <object-name>vitre</object-name>
-  </effect>
   
+   <!-- rembrandt auto switching for glass -->
+  <effect>
+ <inherits-from>Effects/model-transparent</inherits-from>
+
+<condition>
+      <greater-than>
+        <property>sim/multiplay/generic/float[6]</property>
+        <value>9</value>
+      </greater-than>
+	   <property>sim/rendering/rembrandt/enabled</property>
+    </condition>
+ <object-name>vitre</object-name>	
+</effect>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>vitre</object-name>
+  </animation>
+
   <animation>
     <name>annunciators</name>
     <object-name>roll-axis-fail</object-name>

@@ -12,12 +12,18 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>noshadow</type>
     <object-name>vitre</object-name>
-  </effect>
-  
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -35,7 +41,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needle</object-name>
-    <property>consumables/fuel/tank[0]/level-lbs</property>
+    <property>consumables/fuel/total-fuel-lbs</property>
     <interpolation>
       <entry><ind>   0.000 </ind><dep>   0 </dep></entry>
       <entry><ind> 239.960 </ind><dep>  46 </dep></entry> <!--  40 Gals -->

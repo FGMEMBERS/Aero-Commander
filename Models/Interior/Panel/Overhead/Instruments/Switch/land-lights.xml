@@ -16,7 +16,7 @@
     <object-name>base</object-name>
     <object-name>info</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>controls/lighting/instrument-lights</property>
     </condition>
     <emission>
       <red>   0.80 </red>
@@ -35,7 +35,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>controls/lighting/landing-lights</property>
+          <property>controls/switches/landing-lights-switch</property>
       </binding>
       <binding>
         <command>property-toggle</command>
@@ -47,7 +47,7 @@
   <animation>
     <type>rotate</type>
     <object-name>Switch</object-name>
-    <property>/controls/lighting/landing-lights</property>
+    <property>controls/switches/landing-lights-switch</property>
     <factor> 35 </factor>
     <axis>
       <x>  0 </x>
@@ -57,3 +57,5 @@
   </animation>
 
 </PropertyList>
+
+

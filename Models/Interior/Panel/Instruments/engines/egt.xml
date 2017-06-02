@@ -13,12 +13,18 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+  <animation>
+    <type>noshadow</type>
     <object-name>vitre</object-name>
-  </effect>
-  
+  </animation>
+
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>vitre</object-name>
+  </animation>
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -38,10 +44,10 @@
   <animation>
     <type>rotate</type>
     <object-name>needleL</object-name>
-    <property>engines/engine[0]/egt-degf-calc</property>
+    <property>engines/engine[0]/egttempf</property>
     <interpolation>
-      <entry><ind>    0 </ind><dep>   0 </dep></entry>
-      <entry><ind>  800 </ind><dep>  42 </dep></entry>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 800 </ind><dep>  42 </dep></entry>
       <entry><ind> 1200 </ind><dep>  84 </dep></entry>
       <entry><ind> 1600 </ind><dep> 125 </dep></entry>
     </interpolation>
@@ -60,7 +66,7 @@
   <animation>
     <type>rotate</type>
     <object-name>needleR</object-name>
-    <property>engines/engine[1]/egt-degf-calc</property>
+    <property>engines/engine[1]/egttempf</property>
     <interpolation>
       <entry><ind>    0 </ind><dep>   0 </dep></entry>
       <entry><ind>  800 </ind><dep>  42 </dep></entry>
