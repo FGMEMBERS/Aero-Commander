@@ -2,32 +2,166 @@
 
 <PropertyList>
 
-  <key n="68">
-    <name>D</name>
-    <desc>Main door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.passenger.toggle();</script>
-    </binding>
-  </key>
+  <keyboard>
 
-  <key n="69">
-    <name>E</name>
-    <desc>Cargo door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.cargo.toggle();</script>
-    </binding>
-  </key>
- 
-  <key n="100">
-    <name>d</name>
-    <desc>Crew door</desc>
-    <binding>
-      <command>nasal</command>
-      <script>doors.crew.toggle();</script>
-    </binding>
-  </key>
+    <key n="68">
+      <name>D</name>
+      <desc>Main door</desc>
+      <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
+        <command>nasal</command>
+        <script>doors.passenger.toggle();</script>
+      </binding>
+    </key>
+
+    <key n="69">
+      <name>E</name>
+      <desc>Cargo door</desc>
+      <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </key>
+
+    <key n="100">
+      <name>d</name>
+      <desc>Crew door</desc>
+      <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
+        <command>nasal</command>
+        <script>doors.crew.toggle();</script>
+      </binding>
+    </key>
+
+    <key n="108">
+      <name>l</name>
+      <desc>Landing light</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/landing-lights</property>
+      </binding>
+    </key>
+
+    <key n="81">
+      <name>Q</name>
+      <desc>Reset view</desc>
+      <binding>
+        <command>nasal</command>
+        <script>
+          setprop("sim/current-view/field-of-view",      getprop("sim/current-view/config/default-field-of-view-deg"));
+          setprop("sim/current-view/heading-offset-deg", getprop("sim/current-view/config/heading-offset-deg"));
+          setprop("sim/current-view/pitch-offset-deg",   getprop("sim/current-view/config/pitch-offset-deg"));
+          setprop("sim/current-view/roll-offset-deg",    getprop("sim/current-view/config/roll-offset-deg"));
+        </script>
+      </binding>
+    </key>
+
+    <key n="125">
+      <name>}</name>
+      <desc>Autostart/Autostop</desc>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/electric/battery-switch</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/electric/engine/generator</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/instrument-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/nav-lights</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/beacon</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/lighting/strobe</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/switches/starterkey-insert</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>controls/engines/engine[0]/fuel-pump</property>
+      </binding>
+      <!-- Magnetos ON -->
+      <binding>
+        <condition>
+          <property>controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>controls/engines/engine[0]/magnetos</property>
+        <value>3</value>
+      </binding>
+      <binding>
+        <condition>
+          <property>controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>controls/engines/engine[1]/magnetos</property>
+        <value>3</value>
+      </binding>
+      <!-- Magnetos OFF -->
+      <binding>
+        <condition>
+          <not><property>controls/switches/starterkey-insert</property></not>
+        </condition>
+        <command>property-assign</command>
+        <property>controls/engines/engine[0]/magnetos</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <condition>
+          <not><property>controls/switches/starterkey-insert</property></not>
+        </condition>
+        <command>property-assign</command>
+        <property>controls/engines/engine[1]/magnetos</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>engines.autostart();</script>
+      </binding>
+    </key>
+
+  </keyboard>
 
 </PropertyList>
-

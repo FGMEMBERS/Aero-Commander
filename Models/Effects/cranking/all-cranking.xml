@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Left -->
+  <model>
+    <path>crankingL.xml</path>
+    <offsets>
+      <x-m>  1.05548 </x-m>
+      <y-m> -2.35046 </y-m>
+      <z-m> -0.56722 </z-m>
+      <pitch-deg> 15 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>crankingL.xml</path>
+    <offsets>
+      <x-m>  1.05548 </x-m>
+      <y-m> -1.60571 </y-m>
+      <z-m> -0.63238 </z-m>
+      <pitch-deg> -15 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Right -->
+  <model>
+    <path>crankingR.xml</path>
+    <offsets>
+      <x-m>  1.05548 </x-m>
+      <y-m>  1.60571 </y-m>
+      <z-m> -0.63238 </z-m>
+      <pitch-deg> 15 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>crankingR.xml</path>
+    <offsets>
+      <x-m>  1.05548 </x-m>
+      <y-m>  2.35046 </y-m>
+      <z-m> -0.56722 </z-m>
+      <pitch-deg> -15 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

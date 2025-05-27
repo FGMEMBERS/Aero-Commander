@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>overhead.xml</path>
+    <offsets>
+      <x-m> -3.40986 </x-m>
+      <y-m>  0.00000 </y-m>
+      <z-m> -0.43202 </z-m>
+      <pitch-deg> 68 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

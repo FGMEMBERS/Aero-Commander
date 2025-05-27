@@ -10,44 +10,41 @@
     <object-name>front</object-name>
     <object-name>HdgBug</object-name>
     <object-name>OBS-Knob</object-name>
-    <object-name>clic-offset-L</object-name>
-    <object-name>clic-offset-R</object-name>
     <object-name>Hdg-Knob</object-name>
-    <object-name>clic-bug-L</object-name>
-    <object-name>clic-bug-R</object-name>
 
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>front</object-name>
+    <object-name>HdgBug</object-name>
+    <object-name>OBS-Knob</object-name>
+    <object-name>Hdg-Knob</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>front</object-name>
     <object-name>HdgBug</object-name>
+    <object-name>face</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <red>   0.80 </red>
-      <green> 0.50 </green>
-      <blue>  0.50 </blue>
-    </emission>
-  </animation>
-
-  <animation>
-    <type>material</type>
-    <object-name>OBS-Knob</object-name>
-    <object-name>Hdg-Knob</object-name>
-    <emission>
-      <red>   0.45000 </red>
-      <green> 0.09000 </green>
-      <blue>  0.00001 </blue>
-      <factor-prop>/sim/model//material/instruments/factor</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 
@@ -89,43 +86,11 @@
   <!--     Heading Bug control    -->
   <animation>
     <type>pick</type>
-    <object-name>click-bug-L</object-name>
-    <visible>false</visible>
+    <object-name>Hdg-Knob</object-name>
+    <visible>true</visible>
     <action>
-      <name>small decrease</name>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/autopilot/settings/heading-bug-deg</property>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <name>large decrease</name>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/autopilot/settings/heading-bug-deg</property>
-        <step>-5</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>   
-
-  <animation>
-    <type>pick</type>
-    <object-name>click-bug-R</object-name>
-    <visible>false</visible>
-    <action>
-      <name>small increase</name>
-      <button>0</button>
+      <name>scrollwheel increase</name>
+      <button>4</button>
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
@@ -137,46 +102,13 @@
       </binding>
     </action>
     <action>
-      <name>large increase</name>
-      <button>1</button>
+      <name>scrollwheel decrease</name>
+      <button>3</button>
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property>/autopilot/settings/heading-bug-deg</property>
-        <step>5</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>   
-
-  <!--             Heading Offset             -->
-  <animation>
-    <type>pick</type>
-    <object-name>click-offset-L</object-name>
-    <visible>false</visible>
-    <action>
-      <name>small decrease</name>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/heading-indicator/offset-deg</property>
         <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>  
-    <action>
-      <name>large decrease</name>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/heading-indicator/offset-deg</property>
-        <step>-5</step>
         <min>0</min>
         <max>360</max>
         <wrap>1</wrap>
@@ -184,13 +116,14 @@
     </action>
   </animation>
 
+  <!--             Heading Offset             -->
   <animation>
     <type>pick</type>
-    <object-name>click-offset-R</object-name>
-    <visible>false</visible>
+    <object-name>OBS-Knob</object-name>
+    <visible>true</visible>
     <action>
-      <name>small increase</name>
-      <button>0</button>
+      <name>scrollwheel increase</name>
+      <button>4</button>
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
@@ -200,15 +133,15 @@
         <max>360</max>
         <wrap>1</wrap>
       </binding>
-    </action>  
+    </action>
     <action>
-      <name>large increase</name>
-      <button>1</button>
+      <name>scrollwheel decrease</name>
+      <button>3</button>
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
         <property>/instrumentation/heading-indicator/offset-deg</property>
-        <step>5</step>
+        <step>-1</step>
         <min>0</min>
         <max>360</max>
         <wrap>1</wrap>
@@ -217,4 +150,3 @@
   </animation>
 
 </PropertyList>
-

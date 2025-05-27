@@ -25,6 +25,27 @@
   </animation>
 
   <animation>
+    <type>noshadow</type>
+    <object-name>Chronometer</object-name>
+    <object-name>Chrono.lcd</object-name>
+    <object-name>Chrono.select</object-name>
+    <object-name>Chrono.control</object-name>
+    <object-name>Chrono.select</object-name>
+    <object-name>Chrono.dim</object-name>
+    <object-name>Ch.colon</object-name>
+    <object-name>Ch.hr1</object-name>
+    <object-name>Ch.hr2</object-name>
+    <object-name>Ch.mn1</object-name>
+    <object-name>Ch.mn2</object-name>
+    <object-name>Ch.sc1</object-name>
+    <object-name>Ch.sc2</object-name>
+    <object-name>Ch.EThr1</object-name>
+    <object-name>Ch.EThr2</object-name>
+    <object-name>Ch.ETmn1</object-name>
+    <object-name>Ch.ETmn2</object-name>
+  </animation>
+
+  <animation>
     <type>material</type>
     <object-name>Chrono.select</object-name>
     <object-name>Chrono.control</object-name>
@@ -40,11 +61,14 @@
     <object-name>Ch.EThr2</object-name>
     <object-name>Ch.ETmn1</object-name>
     <object-name>Ch.ETmn2</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
     <emission>
-      <factor-prop>/systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
       <red>   0.50 </red>
-      <green> 0.25 </green>
-      <blue>  0.25 </blue>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 

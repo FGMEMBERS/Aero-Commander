@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <filter>
+    <name>ADF needle</name>
+    <debug>false</debug>
+    <type>gain</type>
+    <enable>
+      <property>instrumentation/adf/in-range</property>
+    </enable>
+    <input>
+      <expression>
+        <sum>
+          <property>sim/time/elapsed-sec</property>
+          <value>1.5</value>
+        </sum>
+      </expression>
+    </input>
+    <input>instrumentation/adf/last-receive</input>
+    <output>instrumentation/adf/last-receive</output>
+  </filter>
+
+  <filter>
+    <name>needle: select source with filter</name>
+    <debug>false</debug>
+    <type>noise-spike</type>
+    <max-rate-of-change>60</max-rate-of-change>
+
+    <input>
+      <condition>
+        <and>
+          <greater-than>
+            <property>systems/electrical/outputs/adf</property>
+            <value>18</value>
+          </greater-than>
+          <greater-than>
+            <property>sim/time/elapsed-sec</property>
+            <property>instrumentation/adf/last-receive</property>
+          </greater-than>
+        </and>
+      </condition>
+      <value>90.0</value>
+    </input>
+
+    <input>
+      <condition>
+        <and>
+          <greater-than>
+            <property>systems/electrical/outputs/adf</property>
+            <value>18</value>
+          </greater-than>
+          <less-than>
+            <property>sim/time/elapsed-sec</property>
+            <property>instrumentation/adf/last-receive</property>
+          </less-than>
+        </and>
+      </condition>
+      <expression>
+        <floor>
+          <sum>
+            <property>instrumentation/adf/indicated-bearing-deg</property>
+            <value>0.5</value>
+          </sum>
+        </floor>
+      </expression>
+    </input>
+
+    <input>instrumentation/adf/indicated-bearing-deg-disp</input>
+
+    <period>
+      <min>-180</min>
+      <max>180</max>
+    </period>
+
+    <output>instrumentation/adf/indicated-bearing-deg-disp</output>
+  </filter>
+
+</PropertyList>

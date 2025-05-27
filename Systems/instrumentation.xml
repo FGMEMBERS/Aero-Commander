@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <elt>
+    <on                             type="bool">false</on>
+    <armed                          type="bool">true</armed>
+    <test                           type="bool">false</test>
+  </elt>
+
+  <adf>
+    <adf-btn                        type="bool">true</adf-btn>
+    <bfo-btn                        type="bool">false</bfo-btn>
+    <volume-norm                    type="double">0.5</volume-norm>
+    <power-btn                      type="bool">true</power-btn>
+    <frequencies>
+      <standby-khz                  type="int">291</standby-khz>
+      <selected-khz                 type="int">379</selected-khz>
+    </frequencies>
+  </adf>
+
+  <encoder>
+    <serviceable                    type="bool">true</serviceable>
+    <name>encoder</name>
+    <number>0</number>
+  </encoder>
+
+  <dme n="0">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <ident                          type="bool">false</ident>
+    <volume                         type="double">1.0</volume>
+    <frequencies>
+      <source                       type="string">/instrumentation/dme[0]/frequencies/selected-mhz</source>
+    </frequencies>
+  </dme>
+
+  <dme n="1">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <ident                          type="bool">false</ident>
+    <volume                         type="double">1.0</volume>
+    <frequencies>
+      <source                       type="string">/instrumentation/dme[1]/frequencies/selected-mhz</source>
+    </frequencies>
+  </dme>
+
+  <transponder n="0">
+    <altitude-disp                  type="int">0</altitude-disp>
+    <id-code-disp                   type="int">0</id-code-disp>
+  </transponder>
+
+  <nav-radio>
+    <name>nav</name>
+    <number>0</number>
+  </nav-radio>
+
+  <nav-source>
+    <selector                       type="int">0</selector>
+    <in-range                       type="bool">false</in-range>
+    <from-flag                      type="bool">false</from-flag>
+    <to-flag                        type="bool">false</to-flag>
+    <nav-loc                        type="bool">false</nav-loc>
+    <has-gs                         type="bool">false</has-gs>
+    <gs-in-range                    type="bool">false</gs-in-range>
+    <gs-rate-of-climb               type="double">0.0</gs-rate-of-climb>
+    <gs-rate-of-climb-fpm           type="double">0.0</gs-rate-of-climb-fpm>
+    <heading-needle-deflection      type="double">0.0</heading-needle-deflection>
+    <heading-needle-deflection-norm type="double">0.0</heading-needle-deflection-norm>
+    <gs-needle-deflection           type="double">0.0</gs-needle-deflection>
+    <selected-radial-deg            type="double">0.0</selected-radial-deg>
+    <target-radial-deg              type="double">0.0</target-radial-deg>
+    <course-error                   type="double">0.0</course-error>
+  </nav-source>
+
+  <nav n="0">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <volume                         type="double">0.5</volume>
+    <audio-btn                      type="bool">true</audio-btn>
+    <ident                          type="bool">true</ident>
+    <display-volume                 type="bool">false</display-volume>
+    <radials>
+      <target-radial-deg            type="float">0</target-radial-deg>
+    </radials>
+    <heading-needle-deflection-ils  type="double">0.0</heading-needle-deflection-ils>
+    <heading-needle-deflection-disp type="double">0.0</heading-needle-deflection-disp>
+  </nav>
+
+  <nav n="1">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <volume                         type="double">0.5</volume>
+    <audio-btn                      type="bool">true</audio-btn>
+    <ident                          type="bool">true</ident>
+    <display-volume                 type="bool">false</display-volume>
+    <radials>
+      <target-radial-deg            type="float">0</target-radial-deg>
+    </radials>
+    <heading-needle-deflection-ils  type="double">0.0</heading-needle-deflection-ils>
+    <heading-needle-deflection-disp type="double">0.0</heading-needle-deflection-disp>
+  </nav>
+
+  <comm n="0">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <volume                         type="double">0.95</volume>
+    <display-volume                 type="bool">false</display-volume>
+    <frequencies>
+      <selected-mhz                 type="double">121.50</selected-mhz>
+    </frequencies>
+  </comm>
+
+  <comm n="1">
+    <serviceable                    type="bool">true</serviceable>
+    <power-btn                      type="bool">true</power-btn>
+    <volume                         type="double">0.95</volume>
+    <display-volume                 type="bool">false</display-volume>
+    <frequencies>
+      <standby-mhz                  type="double">133.70</standby-mhz>
+    </frequencies>
+  </comm>
+
+</PropertyList>

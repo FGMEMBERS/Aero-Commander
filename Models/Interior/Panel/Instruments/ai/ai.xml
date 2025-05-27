@@ -19,12 +19,27 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>cache</object-name>
+    <object-name>ajusteknob</object-name>
+    <object-name>aircraft</object-name>
+    <object-name>cageknob</object-name>
+    <object-name>cagedindicator</object-name>
+    <object-name>pitch</object-name>
+    <object-name>roll</object-name>
+    <object-name>reference</object-name>
+    <object-name>rollreference</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>aircraft</object-name>
@@ -34,12 +49,13 @@
     <object-name>roll</object-name>
     <object-name>rollreference</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <red>   0.80 </red>
-      <green> 0.50 </green>
-      <blue>  0.50 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 
@@ -57,7 +73,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <name>Horizon Offset</name>
     <type>translate</type>
@@ -72,7 +88,7 @@
       <z> 1 </z>
     </axis>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>roll</object-name>
@@ -99,23 +115,8 @@
 
   <animation>
     <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCCW</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
-        <step type="double">0.5</step>
-      </binding>          
-    </action>
-  </animation>
-  
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCCW</object-name>
+    <object-name>ajusteknob</object-name>
+    <visible>true</visible>
     <action>
       <button>4</button>
       <repeatable>true</repeatable>
@@ -123,14 +124,8 @@
         <command>property-adjust</command>
         <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
         <step type="double">-1</step>
-      </binding>          
+      </binding>
     </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCCW</object-name>
     <action>
       <button>3</button>
       <repeatable>true</repeatable>
@@ -138,54 +133,9 @@
         <command>property-adjust</command>
         <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
         <step type="double">1</step>
-      </binding>          
-    </action>
-  </animation>  
-  
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCW</object-name>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
-        <step type="double">-0.5</step>
-      </binding>          
+      </binding>
     </action>
   </animation>
-  
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCW</object-name>
-    <action>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
-        <step type="double">-1</step>
-      </binding>          
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <visible>false</visible>
-    <object-name>AdjustCW</object-name>
-    <action>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>/instrumentation/attitude-indicator/horizon-offset-deg</property>
-        <step type="double">1</step>
-      </binding>          
-    </action>
-  </animation>    
 
   <animation>
     <type>pick</type>
@@ -198,7 +148,7 @@
         <command>property-toggle</command>
         <property>/instrumentation/attitude-indicator/caged-flag</property>
         <value type="bool">true</value>
-      </binding>          
+      </binding>
     </action>
   </animation>
 
@@ -223,4 +173,3 @@
   </animation>
 
 </PropertyList>
-

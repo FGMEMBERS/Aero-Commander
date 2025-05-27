@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>MagneticCompass.xml</path>
+    <offsets>
+      <x-m> -3.751 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.790 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

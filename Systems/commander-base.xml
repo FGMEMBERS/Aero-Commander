@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <sim include="views.xml">
+
+    <fuel-fraction>1</fuel-fraction>
+
+    <startup>
+      <splash-texture>Aircraft/Aero-Commander/commander-splash.png</splash-texture>
+    </startup>
+
+    <sound>
+      <path>Aircraft/Aero-Commander/Sounds/commander-sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/Aero-Commander/Models/commander.xml</path>
+      <livery>
+        <file        type="string"/>
+      </livery>
+      <show-immat    type="bool"/>
+    </model>
+
+    <systems         include="rules.xml"/>
+
+    <instrumentation include="initialisation.xml"/>
+
+    <multiplay>
+      <chat_display>1</chat_display>
+      <generic>
+        <int    n="0"  type="int">0</int>
+        <int    n="1"  type="int">0</int>
+        <int    n="2"  type="int">0</int>
+        <int    n="3"  type="int">0</int>
+        <int    n="4"  type="int">0</int>
+        <int    n="5"  type="int">0</int>
+        <int    n="6"  type="bool">1</int>
+        <int    n="7"  type="bool" alias="/sim/model/show-immat"/>
+        <int    n="8"  alias="systems/electrical/outputs/nav-lights">0</int>
+        <int    n="9"  alias="sim/model/lights/beacon/state">false</int>
+        <int    n="10" alias="controls/electric/key-pos">0</int>
+        <float  n="0"  alias="sim/model/door-positions/crew/position-norm"/>
+        <float  n="1"  alias="sim/model/door-positions/passenger/position-norm"/>
+        <float  n="2"  alias="position/gear-agl-m">0</float>
+        <float  n="3"  alias="position/altitude-ft">0</float>
+        <float  n="6"  alias="engines/engine[0]/rpm"/>
+        <float  n="7"  type="bool" alias="engines/engine[0]/cranking"/>
+        <float  n="8"  alias="engines/engine[1]/rpm"/>
+        <float  n="9"  type="bool" alias="engines/engine[1]/cranking"/>
+        <float  n="10" alias="gear/gear[0]/wow/"/>
+        <float  n="11" alias="gear/gear[1]/wow/"/>
+        <float  n="12" alias="gear/gear[2]/wow/"/>
+        <float  n="13" alias="gear/gear[0]/rollspeed-ms"/>
+        <float  n="14" alias="gear/gear[1]/rollspeed-ms"/>
+        <float  n="15" alias="gear/gear[2]/rollspeed-ms"/>
+        <!-- For Bombable -->
+        <int    n="10" type="int" alias="controls/armament/trigger">0</int>
+        <string n="9"  type="string" />
+      </generic>
+    </multiplay>
+
+    <flaps           include="flaps.xml"/>
+
+    <help            include="help.xml"/>
+
+    <menubar         include="../Dialogs/commander-menu.xml"/>
+
+    <aircraft-data   include="aircraft-data.xml"/>
+
+  </sim>
+
+  <input             include="commander-keyboard.xml"/>
+
+  <controls          include="controls.xml"/>
+
+  <instrumentation   include="instrumentation.xml">
+    <gsdi>
+      <serviceable   type="bool">true</serviceable>
+      <enabled       type="bool">true</enabled>
+    </gsdi>
+  </instrumentation>
+
+  <engines           include="engines.xml"/>
+
+  <autopilot         include="autopilot.xml"/>
+
+  <nasal>
+    <doors>
+      <file>Aircraft/Aero-Commander/Nasal/doors.nas</file>
+    </doors>
+    <commander>
+      <file>Aircraft/Aero-Commander/Nasal/hdr.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/liveries.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/light.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/immat.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/convert.nas</file>
+      <file>Aircraft/Aero-Commander/Nasal/Electrical.nas</file>
+    </commander>
+    <kap140>
+      <file>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kap140/kap140.nas</file>
+    </kap140>
+    <kr87>
+      <file>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kr87-adf/kr87.nas</file>
+    </kr87>
+    <engines>
+      <file>Aircraft/Aero-Commander/Nasal/engines-yasim.nas</file>
+    </engines>
+
+    aircraft.data.add(
+
+      "instrumentation/comm[0]/volume",
+      "instrumentation/comm[0]/frequencies/selected-mhz",
+      "instrumentation/comm[0]/frequencies/standby-mhz",
+      "instrumentation/comm[0]/test-btn",
+      "instrumentation/nav[0]/audio-btn",
+      "instrumentation/nav[0]/power-btn",
+      "instrumentation/nav[0]/frequencies/selected-mhz",
+      "instrumentation/nav[0]/frequencies/standby-mhz",
+    );
+
+  </nasal>
+
+</PropertyList>

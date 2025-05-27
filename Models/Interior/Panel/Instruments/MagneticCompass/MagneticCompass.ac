@@ -1,6 +1,6 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "transparent" rgb 0.547091 0.565624 0.595981 amb 0 0 0 emis 0 0 0 spec 1 1 1 shi 64 trans 0.85
+MATERIAL "transparent" rgb 1 1 1 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 64 trans 0.85
 OBJECT world
 kids 4
 OBJECT poly
@@ -10,7 +10,7 @@ data 4
 Ball
 texture "MagneticCompass.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 180.000005
 numvert 920
 -0.022 0.053 -0
 -0.025901 0.013384 0.000085
@@ -7457,7 +7457,7 @@ data 4
 Case
 texture "MagneticCompass.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 180.000005
 numvert 226
 0.001 0.048834 0.023697
 0.001 0.043906 0.026331
@@ -9486,7 +9486,7 @@ data 6
 Marker
 texture "MagneticCompass.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 180.000005
 numvert 6
 0.001 0.053038 0.000163
 0.001 0.053076 -0.000076
@@ -9515,7 +9515,7 @@ name "vitre"
 loc 0 0 -0
 data 5
 vitre
-crease 30.000001
+crease 180.000005
 numvert 4
 0.001 0.053 -0.02
 0.001 0.027 -0.02

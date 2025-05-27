@@ -1,34 +1,85 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<PropertyList include="commander-base.xml">
-  
+<PropertyList include="Systems/commander-base.xml">
+
   <sim>
 
     <description>Aero Commander 500 (YASim)</description>
-    <author>BARANGER Emmanuel (3D/FDM) / Samaliet (Panel)</author>
+    <authors>
+      <author n="0">
+        <name>BARANGER Emmanuel (3D/FDM)</name>
+      </author>
+      <author n="1">
+        <name>Samaliet (Panel)</name>
+      </author>
+    </authors>
+
+    <aircraft-version>0.4</aircraft-version>
+    <status>Alpha</status>
+    <minimum-fg-version>2018.2.0</minimum-fg-version>
+
     <flight-model>yasim</flight-model>
-    <aero>commander-yasim</aero>
+    <aero>Systems/commander-yasim</aero>
+
+    <rating>
+      <FDM type="int">     4 </FDM>
+      <systems type="int"> 2 </systems>
+      <cockpit type="int"> 4 </cockpit>
+      <model type="int">   4 </model>
+    </rating>
+
+    <previews>
+      <preview>
+        <type>interior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-0.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-1.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-2.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-3.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-4.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-5.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash type="bool">true</splash>
+        <path>Previews/commander-6.png</path>
+      </preview>
+    </previews>
 
     <tags>
-      <tag>low-wing</tag>
-      <tag>tricycle</tag>
-      <tag>retractable-gear</tag>
-      <tag>twin-engine</tag>
-      <tag>piston</tag>
-      <tag>fixed-pitch</tag>
+      <tag>aero</tag>
       <tag>transport</tag>
       <tag>1950s</tag>
       <tag>1960s</tag>
       <tag>1970s</tag>
       <tag>1980s</tag>
+      <tag>high-wing</tag>
+      <tag>tricycle</tag>
+      <tag>retractable-gear</tag>
+      <tag>twin-engine</tag>
+      <tag>piston</tag>
+      <tag>compositor</tag>
     </tags>
-    
-    <rating>
-      <FDM type="int">     3 </FDM>
-      <systems type="int"> 2 </systems>
-      <cockpit type="int"> 4 </cockpit>
-      <model type="int">   4 </model>
-    </rating>
 
   </sim>
 
