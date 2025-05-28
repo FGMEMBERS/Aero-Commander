@@ -4,6 +4,10 @@
 
   <title>Aero Commander 500</title>
   <key>
+    <name>}</name>
+    <desc>AutoStart/AutoStop</desc>
+  </key>
+  <key>
     <name>d</name>
     <desc>Open/Close crew door</desc>
   </key>
@@ -15,5 +19,9 @@
     <name>E</name>
     <desc>Open/Close cargo door</desc>
   </key>
-  
+  <key>
+    <name>l</name>
+    <desc>On/Off Landing light</desc>
+  </key>
+
 </PropertyList>

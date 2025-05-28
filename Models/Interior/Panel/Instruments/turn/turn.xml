@@ -13,24 +13,34 @@
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>slipball</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>
     <object-name>needle</object-name>
     <object-name>slipball</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <red>   0.80 </red>
-      <green> 0.50 </green>
-      <blue>  0.50 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 

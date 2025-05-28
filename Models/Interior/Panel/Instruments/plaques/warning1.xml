@@ -8,5 +8,10 @@
     <object-name>warning1</object-name>
   </animation>
 
+  <animation>
+    <type>noshadow</type>
+    <object-name>warning1</object-name>
+  </animation>
+
 </PropertyList>
 

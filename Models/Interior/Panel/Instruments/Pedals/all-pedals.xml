@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Pilot pedals -->
+  <model>
+    <path>pedals.xml</path>
+    <offsets>
+      <x-m> -3.818 </x-m>
+      <y-m> -0.301 </y-m>
+      <z-m> -1.543 </z-m>
+    </offsets>
+  </model>
+
+  <!-- Copilot pedals -->
+  <model>
+    <path>pedals.xml</path>
+    <offsets>
+      <x-m> -3.818 </x-m>
+      <y-m>  0.301 </y-m>
+      <z-m> -1.543 </z-m>
+    </offsets>
+  </model>
+
+</PropertyList>

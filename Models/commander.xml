@@ -4,26 +4,18 @@
 
   <path>commander.ac</path>
 
+  <!-- MP sound call -->
+  <sound>
+    <path>../Sounds/mp-sound.xml</path>
+  </sound>
+
   <nasal>
     <load>
-      var livery_update = aircraft.livery_update.new("Aircraft/Aero-Commander/Models/Liveries", 10);
-      
-      var self = cmdarg();
-
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-
-      var crew_door = self.getNode("sim/model/door-positions/crew/position-norm", 1);
-      var passenger_door = self.getNode("sim/model/door-positions/passenger/position-norm", 1);
-      
-      crew_door.alias(float_0);
-      passenger_door.alias(float_0);
+      var livery_update = aircraft.livery_update.new("Liveries", 10);
     </load>
 
     <unload>
       livery_update.stop();
-      crew_door.unalias();
-      passenger_door.unalias();
     </unload>
   </nasal>
 
@@ -61,7 +53,7 @@
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
     <object-name>antennes</object-name>
-    
+
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
     <object-name>heliceG</object-name>
@@ -92,6 +84,10 @@
     <object-name>beacontrs</object-name>
     <object-name>lampes</object-name>
     <object-name>cables</object-name>
+    <!-- HDR mode -->
+    <object-name>HDRvitres</object-name>
+    <object-name>HDRvitrecrew</object-name>
+    <object-name>HDRvitremain</object-name>
   </animation>
 
   <animation>
@@ -129,7 +125,7 @@
     <object-name>charniere1</object-name>
     <object-name>charniere2</object-name>
     <object-name>antennes</object-name>
-    
+
     <object-name>trous</object-name>
     <object-name>echappes</object-name>
     <object-name>heliceG</object-name>
@@ -148,19 +144,19 @@
     <object-name>articuleDB</object-name>
     <object-name>axeDB</object-name>
     <object-name>roueD</object-name>
-    
+
     <property-base>sim/model/livery</property-base>
     <texture-prop>texture</texture-prop>
     <texture>texture.png</texture>
     <specular>
-      <red>   0.3 </red>
-      <green> 0.3 </green>
-      <blue>  0.3 </blue>
+      <red-prop>specular/red</red-prop>
+      <green-prop>specular/green</green-prop>
+      <blue-prop>specular/blue</blue-prop>
     </specular>
   </animation>
 
   <effect>
-    <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
+    <inherits-from>Effects/Bump/bumpspec</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>portecrew</object-name>
     <object-name>portemain</object-name>
@@ -196,111 +192,73 @@
     <object-name>antennes</object-name>
   </effect>
 
-  <!-- working for Rembrandt -->
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>Effects/Glass/glassrain</inherits-from>
     <object-name>vitres</object-name>
     <object-name>vitrecrew</object-name>
     <object-name>vitremain</object-name>
   </effect>
-  
+
   <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
+    <inherits-from>Effects/Glass/glass</inherits-from>
+    <object-name>HDRvitres</object-name>
+    <object-name>HDRvitrecrew</object-name>
+    <object-name>HDRvitremain</object-name>
+  </effect>
+
+  <!-- Sélection des vitres en fonction de HDR ou pas -->
+  <animation>
+    <type>select</type>
+    <condition>
+      <property>/sim/rendering/hdr/hdr-enabled</property>
+    </condition>
+    <object-name>HDRvitres</object-name>
+    <object-name>HDRvitrecrew</object-name>
+    <object-name>HDRvitremain</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <not><property>/sim/rendering/hdr/hdr-enabled</property></not>
+    </condition>
     <object-name>vitres</object-name>
     <object-name>vitrecrew</object-name>
     <object-name>vitremain</object-name>
+  </animation>
+
+  <effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>beacontrs</object-name>
+    <object-name>lampes</object-name>
     <object-name>propdiscG</object-name>
     <object-name>propblurG</object-name>
     <object-name>propdiscD</object-name>
     <object-name>propblurD</object-name>
-    <object-name>beacontrs</object-name>
-    <object-name>lampes</object-name>
   </effect>
-  
-  <!-- Une ombre pour OSG -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/shadow.xml</path>
-    <offsets>
-      <x-m>  0.00 </x-m>
-      <y-m>  0.00 </y-m>
-      <z-m> -2.11 </z-m>
-    </offsets>
-  </model>
 
-  <!-- Interieur -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/interior.xml</path>
-  </model>
-
-  <!-- Immatriculation -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Immat/immat.xml</path>
-  </model>
-
-  <!-- Cranking effects -->
-  <!-- Left -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/cranking/crankingL.xml</path>
-    <offsets>
-      <x-m>  1.05548 </x-m>
-      <y-m> -2.35046 </y-m>
-      <z-m> -0.56722 </z-m>
-      <pitch-deg> 15 </pitch-deg>
-    </offsets>
+    <path>Interior/interior.xml</path>
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/cranking/crankingL.xml</path>
-    <offsets>
-      <x-m>  1.05548 </x-m>
-      <y-m> -1.60571 </y-m>
-      <z-m> -0.63238 </z-m>
-      <pitch-deg> -15 </pitch-deg>
-    </offsets>
+    <path>Immat/immat.xml</path>
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/cranking/crankingR.xml</path>
-    <offsets>
-      <x-m>  1.05548 </x-m>
-      <y-m>  1.60571 </y-m>
-      <z-m> -0.63238 </z-m>
-      <pitch-deg> 15 </pitch-deg>
-    </offsets>
+    <path>light/all-lights.xml</path>
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/cranking/crankingR.xml</path>
-    <offsets>
-      <x-m>  1.05548 </x-m>
-      <y-m>  2.35046 </y-m>
-      <z-m> -0.56722 </z-m>
-      <pitch-deg> -15 </pitch-deg>
-    </offsets>
+    <path>Effects/cranking/all-cranking.xml</path>
   </model>
 
-  <!-- Effets sur le sol -->
-  <!-- Roue gauche -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/ground/ground1.xml</path>
-    <offsets>
-      <x-m> -0.77452 </x-m>
-      <y-m> -1.96313 </y-m>
-      <z-m> -2.20811 </z-m>
-    </offsets>
+    <path>Effects/ground/all-ground.xml</path>
   </model>
 
-  <!-- Roue droite -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Effects/ground/ground2.xml</path>
-    <offsets>
-      <x-m> -0.77452 </x-m>
-      <y-m>  1.96313 </y-m>
-      <z-m> -2.20811 </z-m>
-    </offsets>
-  </model>
-  
-  <!-- Les hélices --> 
+  <!-- Les hélices -->
   <animation>
     <name>HeliceGauche</name>
     <object-name>bolG</object-name>
@@ -447,8 +405,8 @@
   <animation>
     <type>rotate</type>
     <object-name>direction</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> -20 </factor>
+    <property>controls/flight/rudder</property>
+    <factor> 15 </factor>
     <axis>
       <x1-m>  4.60062 </x1-m>
       <y1-m>  0.00000 </y1-m>
@@ -463,7 +421,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurG</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
+    <property>controls/flight/elevator</property>
     <factor> 15 </factor>
     <axis>
       <x1-m>  5.07242 </x1-m>
@@ -478,7 +436,7 @@
   <animation>
     <type>rotate</type>
     <object-name>profondeurD</object-name>
-    <property>surface-positions/elevator-pos-norm</property>
+    <property>controls/flight/elevator</property>
     <factor> 15 </factor>
     <axis>
       <x1-m>  5.07433 </x1-m>
@@ -606,7 +564,7 @@
     </axis>
   </animation>
 
-  <!-- Animation des portes --> 
+  <!-- Animation des portes -->
   <animation>
     <type>rotate</type>
     <object-name>porteAG1</object-name>
@@ -787,13 +745,13 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <name>TrainGauche</name>
     <object-name>axeGH</object-name>
     <object-name>axeGB</object-name>
-    <object-name>articuleGH</object-name>   
-    <object-name>articuleGB</object-name>   
+    <object-name>articuleGH</object-name>
+    <object-name>articuleGB</object-name>
     <object-name>entreaxeG</object-name>
     <object-name>tuyauG</object-name>
     <object-name>roueG</object-name>
@@ -818,7 +776,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>rotate</type>
     <object-name>TrainGauche</object-name>
@@ -838,13 +796,13 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <name>TrainDroit</name>
     <object-name>axeDH</object-name>
     <object-name>axeDB</object-name>
-    <object-name>articuleDH</object-name>   
-    <object-name>articuleDB</object-name>   
+    <object-name>articuleDH</object-name>
+    <object-name>articuleDB</object-name>
     <object-name>entreaxeD</object-name>
     <object-name>tuyauD</object-name>
     <object-name>roueD</object-name>
@@ -869,7 +827,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>rotate</type>
     <object-name>TrainDroit</object-name>
@@ -889,16 +847,16 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+
   <!-- Suspensions 0.036 -->
   <animation>
     <name>AxeGauche</name>
     <object-name>roueG</object-name>
     <object-name>axeGB</object-name>
-    <object-name>articuleGB</object-name>   
+    <object-name>articuleGB</object-name>
     <object-name>tuyauG</object-name>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleGH</object-name>
@@ -919,7 +877,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>translate</type>
     <object-name>AxeGauche</object-name>
@@ -935,7 +893,7 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>rotate</type>
     <object-name>articuleGB</object-name>
@@ -956,15 +914,15 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <name>AxeDroite</name>
     <object-name>roueD</object-name>
     <object-name>axeDB</object-name>
-    <object-name>articuleDB</object-name>   
+    <object-name>articuleDB</object-name>
     <object-name>tuyauD</object-name>
   </animation>
-  
+
   <animation>
     <type>rotate</type>
     <object-name>articuleDH</object-name>
@@ -985,7 +943,7 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>translate</type>
     <object-name>AxeDroite</object-name>
@@ -1001,7 +959,7 @@
       <z> 1 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>rotate</type>
     <object-name>articuleDB</object-name>
@@ -1022,13 +980,13 @@
       <z> 0 </z>
     </axis>
   </animation>
- 
+
   <!-- Rotation de la roue avant en fonction de la gouverne de direction -->
   <animation>
     <type>rotate</type>
     <object-name>TrainAvant</object-name>
-    <property>surface-positions/rudder-pos-norm</property>
-    <factor> 30 </factor>
+    <property>gear/gear[0]/caster-angle-deg</property>
+    <factor> -0.4 </factor>
     <axis>
       <x1-m> -5.31262 </x1-m>
       <y1-m>  0.00000 </y1-m>
@@ -1101,11 +1059,23 @@
   <animation>
     <type>pick</type>
     <object-name>PorteCrew</object-name>
+    <object-name>HDRvitrecrew</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.crew.toggle();</script>
       </binding>
@@ -1115,6 +1085,7 @@
   <animation>
     <type>rotate</type>
     <object-name>PorteCrew</object-name>
+    <object-name>HDRvitrecrew</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -70 </factor>
     <axis>
@@ -1137,11 +1108,23 @@
   <animation>
     <type>pick</type>
     <object-name>PorteMain</object-name>
+    <object-name>HDRvitremain</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.passenger.toggle();</script>
       </binding>
@@ -1151,6 +1134,7 @@
   <animation>
     <type>rotate</type>
     <object-name>PorteMain</object-name>
+    <object-name>HDRvitremain</object-name>
     <property>sim/model/door-positions/passenger/position-norm</property>
     <factor> -70 </factor>
     <axis>
@@ -1176,6 +1160,17 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.cargo.toggle();</script>
       </binding>
@@ -1196,90 +1191,5 @@
       <z2-m> -1.07995 </z2-m>
     </axis>
   </animation>
-
-  <!-- Ajout des effets lumineux -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/beacon.xml</path>
-    <offsets>
-      <x-m> 4.80606 </x-m>
-      <y-m> 0.00000 </y-m>
-      <z-m> 2.24377 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/beacon.xml</path>
-    <offsets>
-      <x-m> -1.06960 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -1.94863 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/RedLight.xml</path>
-    <offsets>
-      <x-m> -1.67520 </x-m>
-      <y-m> -7.47671 </y-m>
-      <z-m>  0.32118 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/StrobeLight.xml</path>
-    <offsets>
-      <x-m> -1.49612 </x-m>
-      <y-m> -7.50631 </y-m>
-      <z-m>  0.32354 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/GreenLight.xml</path>
-    <offsets>
-      <x-m> -1.67520 </x-m>
-      <y-m>  7.47671 </y-m>
-      <z-m>  0.32118 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/StrobeLight.xml</path>
-    <offsets>
-      <x-m> -1.49612 </x-m>
-      <y-m>  7.50631 </y-m>
-      <z-m>  0.32354 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/StrobeLight.xml</path>
-    <offsets>
-      <x-m>  5.64336 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.36353 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Landing Lights -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m> -5.034 </x-m>
-      <y-m> -0.350 </y-m>
-      <z-m> -1.580 </z-m>
-      <heading-deg> 10 </heading-deg>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/Aero-Commander/Models/light/light-cone.xml</path>
-    <offsets>
-      <x-m> -5.034 </x-m>
-      <y-m>  0.350 </y-m>
-      <z-m> -1.580 </z-m>
-      <heading-deg> -10 </heading-deg>
-    </offsets>
-  </model>
 
 </PropertyList>

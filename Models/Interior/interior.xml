@@ -17,110 +17,85 @@
     <object-name>carte1</object-name>
     <object-name>carte2</object-name>
     <object-name>courbe</object-name>
-    
+
     <!-- Objets transparents -->
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
+    <!-- HDR mode -->
+    <object-name>HDRintvitres</object-name>
+    <object-name>HDRintvitrecrew</object-name>
+    <object-name>HDRintvitremain</object-name>
+    <object-name>HDRparesoleil</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+    <inherits-from>../Effects/Glass/glassrain</inherits-from>
+    <object-name>intvitres</object-name>
+    <object-name>intvitrecrew</object-name>
+    <object-name>intvitremain</object-name>
+    <object-name>paresoleil</object-name>
+  </effect>
+
+  <effect>
+    <inherits-from>../Effects/Glass/glass</inherits-from>
+    <object-name>HDRintvitres</object-name>
+    <object-name>HDRintvitrecrew</object-name>
+    <object-name>HDRintvitremain</object-name>
+    <object-name>HDRparesoleil</object-name>
+  </effect>
+
+  <!-- Sélection des vitres en fonction de HDR ou pas -->
+  <animation>
+    <type>select</type>
+    <condition>
+      <property>/sim/rendering/hdr/hdr-enabled</property>
+    </condition>
+    <object-name>HDRintvitres</object-name>
+    <object-name>HDRintvitrecrew</object-name>
+    <object-name>HDRintvitremain</object-name>
+    <object-name>HDRparesoleil</object-name>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <condition>
+      <not><property>/sim/rendering/hdr/hdr-enabled</property></not>
+    </condition>
     <object-name>intvitres</object-name>
     <object-name>intvitrecrew</object-name>
     <object-name>intvitremain</object-name>
     <object-name>paresoleil</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
-  <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
-    <object-name>intvitres</object-name>
-    <object-name>intvitrecrew</object-name>
-    <object-name>intvitremain</object-name>
-    <object-name>paresoleil</object-name>
-  </effect>
-  
-  <!-- Pilote -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Pilot/pilot.xml</path>
-    <offsets>
-      <x-m> -3.401 </x-m>
-      <y-m> -0.286 </y-m>
-      <z-m> -1.241 </z-m>
-    </offsets>
+    <path>Panel/all-panel.xml</path>
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
-    <offsets>
-      <x-m> -2.991 </x-m>
-      <y-m> -0.294 </y-m>
-      <z-m> -1.145 </z-m>
-    </offsets>
+    <path>Panel/Overhead/all-overheads.xml</path>
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Seats/seat.xml</path>
-    <offsets>
-      <x-m> -2.860 </x-m>
-      <y-m>  0.309 </y-m>
-      <z-m> -1.240 </z-m>
-    </offsets>
+    <path>../Pilot/all-pilots.xml</path>
   </model>
 
-  <!-- Pilot pedals -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
-    <offsets>
-      <x-m> -3.818 </x-m>
-      <y-m> -0.301 </y-m>
-      <z-m> -1.543 </z-m>
-    </offsets>
+    <path>Seats/all-seats.xml</path>
   </model>
 
-  <!-- Copilot pedals -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Pedals/pedals.xml</path>
-    <offsets>
-      <x-m> -3.818 </x-m>
-      <y-m>  0.301 </y-m>
-      <z-m> -1.543 </z-m>
-    </offsets>
+    <path>Panel/Instruments/Pedals/all-pedals.xml</path>
   </model>
 
-  <!-- Planche de bord -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/panel.xml</path>
-    <offsets>
-      <x-m> -3.85800 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -1.11858 </z-m>
-    </offsets>
+    <path>Panel/Instruments/Yokes/all-yokes.xml</path>
   </model>
 
-  <!-- Overhead -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Overhead/overhead.xml</path>
-    <offsets>
-      <x-m> -3.40986 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -0.43202 </z-m>
-      <pitch-deg> 68 </pitch-deg>
-    </offsets>
-  </model>
-
-  <!-- Magnetic Compass -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/MagneticCompass/MagneticCompass.xml</path>
-    <offsets>
-      <x-m> -3.751 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.790 </z-m>
-    </offsets>
-  </model>
-
-  <!-- Yokes -->
-  <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Yokes/yokes.xml</path>
-    <offsets>
-      <x-m> -3.52416 </x-m>
-      <y-m>  0.00000 </y-m>
-      <z-m> -1.74414 </z-m>
-    </offsets>
+    <path>Panel/Instruments/MagneticCompass/all-MagneticCompass.xml</path>
   </model>
 
   <!-- Les portes -->
@@ -134,11 +109,23 @@
   <animation>
     <type>pick</type>
     <object-name>IntPorteCrew</object-name>
+    <object-name>HDRintvitrecrew</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.crew.toggle();</script>
       </binding>
@@ -148,6 +135,7 @@
   <animation>
     <type>rotate</type>
     <object-name>IntPorteCrew</object-name>
+    <object-name>HDRintvitrecrew</object-name>
     <property>sim/model/door-positions/crew/position-norm</property>
     <factor> -70 </factor>
     <axis>
@@ -169,11 +157,23 @@
   <animation>
     <type>pick</type>
     <object-name>IntPorteMain</object-name>
+    <object-name>HDRintvitremain</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.passenger.toggle();</script>
       </binding>
@@ -183,6 +183,7 @@
   <animation>
     <type>rotate</type>
     <object-name>IntPorteMain</object-name>
+    <object-name>HDRintvitremain</object-name>
     <property>sim/model/door-positions/passenger/position-norm</property>
     <factor> -70 </factor>
     <axis>
@@ -208,6 +209,17 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
+        <condition>
+          <and>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+            <less-than>
+              <property>/gear/gear[0]/rollspeed-ms</property>
+              <value>10</value>
+            </less-than>
+          </and>
+        </condition>
         <command>nasal</command>
         <script>doors.cargo.toggle();</script>
       </binding>

@@ -20,24 +20,30 @@
     <type>material</type>
     <object-name>LuzAlrmGreenOn</object-name>
     <object-name>LuzAlrmYellowOn</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
     <emission>
       <red>   2 </red>
       <green> 2 </green>
       <blue>  2 </blue>
     </emission>
   </animation>
-    
+
   <animation>
     <type>material</type>
     <object-name>LuzAlrmGreenOff</object-name>
     <object-name>LuzAlrmYellowOff</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
     <emission>
       <red>   0.1 </red>
       <green> 0.1 </green>
       <blue>  0.1 </blue>
     </emission>
   </animation>
-    
+
   <animation>
     <type>pick</type>
     <object-name>PalancaTren</object-name>

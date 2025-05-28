@@ -3,7 +3,7 @@
 <PropertyList>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/plaques/nosmoking.xml</path>
+    <path>nosmoking.xml</path>
     <offsets>
       <x-m>  0.02161 </x-m>
       <y-m> -0.15447 </y-m>
@@ -12,7 +12,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/plaques/warning1.xml</path>
+    <path>warning1.xml</path>
     <offsets>
       <x-m>  0.001041 </x-m>
       <y-m> -0.467680 </y-m>
@@ -21,7 +21,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/plaques/warning2.xml</path>
+    <path>warning2.xml</path>
     <offsets>
       <x-m>  0.001404 </x-m>
       <y-m>  0.184820 </y-m>

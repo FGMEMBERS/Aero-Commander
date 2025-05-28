@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<!-- KI 206 
-Bendix/King VOR / LOC / Glideslope Indicator
-Syd Adams
--->
-
+<!-- KI 206 Bendix/King VOR / LOC / Glideslope Indicator Syd Adams -->
 <PropertyList>
 
   <path>ki206.ac</path>
 
   <animation>
-    <object-name>KI206.gsflag</object-name>
-    <object-name>KI206.toflag</object-name>
-    <object-name>KI206.fromflag</object-name>
-    <object-name>KI206.navflag</object-name>
-    <object-name>KI206.face</object-name>
-    <object-name>KI206card</object-name>
-    <object-name>KI206.locneedle</object-name>
-    <object-name>KI206.gsneedle</object-name>
-    <object-name>KI206.knob</object-name>
+    <object-name>gsflag</object-name>
+    <object-name>toflag</object-name>
+    <object-name>fromflag</object-name>
+    <object-name>navflag</object-name>
+    <object-name>face</object-name>
+    <object-name>card</object-name>
+    <object-name>locneedle</object-name>
+    <object-name>gsneedle</object-name>
+    <object-name>knob</object-name>
 
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>gsflag</object-name>
+    <object-name>toflag</object-name>
+    <object-name>fromflag</object-name>
+    <object-name>navflag</object-name>
+    <object-name>face</object-name>
+    <object-name>card</object-name>
+    <object-name>locneedle</object-name>
+    <object-name>gsneedle</object-name>
+    <object-name>knob</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
-    <object-name>KI206.gsflag</object-name>
-    <object-name>KI206.toflag</object-name>
-    <object-name>KI206.fromflag</object-name>
-    <object-name>KI206.navflag</object-name>
-    <object-name>KI206.face</object-name>
-    <object-name>KI206card</object-name>
-    <object-name>KI206.locneedle</object-name>
-    <object-name>KI206.gsneedle</object-name>
-    <object-name>KI206.knob</object-name>
+    <object-name>gsflag</object-name>
+    <object-name>toflag</object-name>
+    <object-name>fromflag</object-name>
+    <object-name>navflag</object-name>
+    <object-name>face</object-name>
+    <object-name>card</object-name>
+    <object-name>locneedle</object-name>
+    <object-name>gsneedle</object-name>
+    <object-name>knob</object-name>
+    <condition>
+      <property>controls/electric/battery-switch</property>
+    </condition>
     <emission>
-      <red>   0.07 </red>
-      <green> 0.04 </green>
-      <blue>  0.04 </blue>
-      <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>KI206.navflag</object-name>
+    <object-name>navflag</object-name>
     <condition>
       <or>
         <not>
-          <property>instrumentation/nav/data-is-valid</property>
+          <property>instrumentation/nav[0]/data-is-valid</property>
         </not>
         <less-than>
           <property>systems/electrical/outputs/nav</property>
           <value>0.1</value>
         </less-than>
         <not>
-          <property>instrumentation/nav/in-range</property>
+          <property>instrumentation/nav[0]/in-range</property>
         </not>
       </or>
     </condition>
@@ -69,18 +82,18 @@ Syd Adams
 
   <animation>
     <type>select</type>
-    <object-name>KI206.gsflag</object-name>
+    <object-name>gsflag</object-name>
     <condition>
       <or>
         <not>
-          <property>instrumentation/nav/has-gs</property>
+          <property>instrumentation/nav[0]/has-gs</property>
         </not>
         <less-than>
           <property>systems/electrical/outputs/nav</property>
-          <value>0.1</value>	
+          <value>0.1</value>
         </less-than>
         <greater-than>
-          <property>instrumentation/nav/in-range</property>
+          <property>instrumentation/nav[0]/in-range</property>
           <value>30000</value>
         </greater-than>
       </or>
@@ -89,172 +102,92 @@ Syd Adams
 
   <animation>
     <type>select</type>
-    <object-name>KI206.toflag</object-name>
+    <object-name>toflag</object-name>
     <condition>
-      <property>instrumentation/nav/to-flag</property>
+      <property>instrumentation/nav[0]/to-flag</property>
     </condition>
   </animation>
 
   <animation>
     <type>select</type>
-    <object-name>KI206.fromflag</object-name>
+    <object-name>fromflag</object-name>
     <condition>
-      <property>instrumentation/nav/from-flag</property>
+      <property>instrumentation/nav[0]/from-flag</property>
     </condition>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>KI206card</object-name>
-    <property>instrumentation/nav/radials/selected-deg</property>
+    <object-name>card</object-name>
+    <property>instrumentation/nav[0]/radials/selected-deg</property>
     <axis>
-      <x>1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>translate</type>
-    <object-name>KI206.locneedle</object-name>
-    <property>instrumentation/nav/heading-needle-deflection</property>
+    <object-name>locneedle</object-name>
+    <property>instrumentation/nav[0]/heading-needle-deflection</property>
     <interpolation>
-      <entry><ind>-10.0</ind><dep>-0.0113</dep></entry>
-      <entry><ind>0.0</ind><dep>0.0</dep></entry>
-      <entry><ind>10.0</ind><dep>0.0113</dep></entry>
+      <entry><ind> -10 </ind><dep> -0.0113 </dep></entry>
+      <entry><ind>   0 </ind><dep>  0.0000 </dep></entry>
+      <entry><ind>  10 </ind><dep>  0.0113 </dep></entry>
     </interpolation>
     <axis>
-      <x>0.0</x>
-      <y>1.0</y>
-      <z>0.0</z>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
     </axis>
   </animation>
- 
+
   <animation>
     <type>translate</type>
-    <object-name>KI206.gsneedle</object-name>
-    <property>instrumentation/nav/gs-needle-deflection</property>
+    <object-name>gsneedle</object-name>
+    <property>instrumentation/nav[0]/gs-needle-deflection</property>
     <interpolation>
-      <entry><ind>-9999.0</ind><dep>-0.0113</dep></entry>
-      <entry><ind>-10.0</ind><dep>-0.0113</dep></entry>
-      <entry><ind>0.0</ind><dep>0.0</dep></entry>
-      <entry><ind>10.0</ind><dep>0.0113</dep></entry>
-      <entry><ind>9999.0</ind><dep>0.0113</dep></entry>
+      <entry><ind> -9999 </ind><dep> -0.0113 </dep></entry>
+      <entry><ind>   -10 </ind><dep> -0.0113 </dep></entry>
+      <entry><ind>     0 </ind><dep>  0.0000 </dep></entry>
+      <entry><ind>    10 </ind><dep>  0.0113 </dep></entry>
+      <entry><ind>  9999 </ind><dep>  0.0113 </dep></entry>
     </interpolation>
     <axis>
-      <x>0.0</x>
-      <y>0.0</y>
-      <z>1.0</z>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
     </axis>
   </animation>
 
   <animation>
     <type>rotate</type>
-    <object-name>KI206.knob</object-name>
-    <property>instrumentation/nav/radials/selected-deg</property>
+    <object-name>knob</object-name>
+    <property>instrumentation/nav[0]/radials/selected-deg</property>
     <center>
-      <x-m>0.0</x-m>
-      <y-m>-0.033 </y-m>
-      <z-m>-0.033 </z-m>
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.03069 </y-m>
+      <z-m> -0.03047 </z-m>
     </center>
     <axis>
-      <x>-1</x>
-      <y>0</y>
-      <z>0</z>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
     </axis>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>KI206.crsdn</object-name>
-    <visible>0</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>-10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
+    <object-name>knob</object-name>
+    <visible>true</visible>
     <action>
       <name>scrollwheel increase</name>
       <button>4</button>
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <name>decrease</name>
-      <button>3</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>-1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-  </animation>
-
-  <animation>
-    <type>pick</type>
-    <object-name>KI206.crsup</object-name>
-    <visible>0</visible>
-    <action>
-      <button>0</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>1</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <button>1</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
-        <step>10</step>
-        <min>0</min>
-        <max>360</max>
-        <wrap>1</wrap>
-      </binding>
-    </action>
-    <action>
-      <name>scrollwheel increase</name>
-      <button>4</button>
-      <repeatable>true</repeatable>
-      <binding>
-        <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
         <step>1</step>
         <min>0</min>
         <max>360</max>
@@ -267,7 +200,7 @@ Syd Adams
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>instrumentation/nav/radials/selected-deg</property>
+        <property>instrumentation/nav[0]/radials/selected-deg</property>
         <step>-1</step>
         <min>0</min>
         <max>360</max>

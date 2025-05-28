@@ -181,4 +181,3 @@ var kr87 = {
 var kr87_0 = kr87.new( "/instrumentation/adf[0]" ).update();
 
 #setlistener("/sim/signals/fdm-initialized", func { timer_update() } );
-

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <PropertyList>
-  
+
   <sim>
-    
+
     <model>
       <livery>
-        <name type="string">Texture 2046</name>
+        <name     type="string">Texture 2046</name>
         <texture>Liveries/2048x2048/texture2046.png</texture>
         <specular>
           <red>   0.3 </red>
@@ -18,10 +18,10 @@
     </model>
     <multiplay>
       <generic>
-        <int n="7" type="bool"> 1 </int>
+        <int      n="7" type="bool">true</int>
       </generic>
     </multiplay>
-    
+
   </sim>
-  
+
 </PropertyList>

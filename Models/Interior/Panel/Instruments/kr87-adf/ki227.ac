@@ -1,6 +1,6 @@
 AC3Db
 MATERIAL "DefaultWhite" rgb 1 1 1  amb 1 1 1  emis 0 0 0  spec 0.5 0.5 0.5  shi 64  trans 0
-MATERIAL "transparent" rgb 0.547091 0.565624 0.595981 amb 0 0 0 emis 0 0 0 spec 1 1 1 shi 50 trans 0.85
+MATERIAL "transparent" rgb 1 1 1 amb 0.5 0.5 0.5 emis 0 0 0 spec 1 1 1 shi 64 trans 0.85
 OBJECT world
 kids 6
 OBJECT poly
@@ -10,7 +10,7 @@ data 11
 KI227.bezel
 texture "KI227.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 30.000005
 numvert 147
 0.000516 0.03118 -0.03118
 0.000516 0.022047 -0.038188
@@ -984,7 +984,7 @@ data 10
 KI227.card
 texture "KI227.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 30.000005
 numvert 48
 0.000972 0.01785 -0.01785
 0.000972 0.00966 -0.023323
@@ -1267,7 +1267,7 @@ data 10
 KI227.face
 texture "KI227.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 30.000005
 numvert 48
 0.001711 0.000628 -0.006463
 0.001711 -0.000628 -0.006463
@@ -1520,7 +1520,7 @@ data 10
 KI227.knob
 texture "KI227.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 30.000005
 numvert 24
 0.000528 -0.029205 0.029388
 0.000528 -0.032353 0.027571
@@ -1674,7 +1674,7 @@ data 12
 KI227.needle
 texture "KI227.png"
 texrep 1.000000 1.000000
-crease 30.000001
+crease 30.000005
 numvert 14
 0.001274 0.021767 -0.001894
 0.001274 -0.027898 -0.000703
@@ -1766,7 +1766,7 @@ name "vitre"
 loc -0.000004 0 -0
 data 5
 vitre
-crease 30.000001
+crease 30.000005
 numvert 33
 0.00307 0.035551 -0.023754
 0.00307 0.039502 -0.016363

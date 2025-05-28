@@ -9,20 +9,20 @@
     <object-name>panel</object-name>
     <object-name>panel2</object-name>
     <object-name>fondvide</object-name>
-    
+
     <!-- Objets transparents -->
   </animation>
 
   <!-- Les plaques -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/plaques/all-plaques.xml</path>
+    <path>Instruments/plaques/all-plaques.xml</path>
   </model>
 
   <!-- Kap140 -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kap140/KAP140TwoAxisAlt.xml</path>
+    <path>Instruments/kap140/kap140.xml</path>
     <offsets>
-      <x-m>  0.027 </x-m>
+      <x-m>  0.010 </x-m>
       <y-m>  0.000 </y-m>
       <z-m>  0.256 </z-m>
     </offsets>
@@ -30,7 +30,7 @@
 
   <!-- hi -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/hi/hi.xml</path>
+    <path>Instruments/hi/hi.xml</path>
     <offsets>
       <x-m>  0.005 </x-m>
       <y-m> -0.178 </y-m>
@@ -40,7 +40,7 @@
 
   <!-- Marker -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/marker/MarkerBeacon.xml</path>
+    <path>Instruments/marker/MarkerBeacon.xml</path>
     <offsets>
       <x-m>  0.021 </x-m>
       <y-m> -0.121 </y-m>
@@ -50,7 +50,7 @@
 
   <!-- Casque -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Casque/casque.xml</path>
+    <path>Instruments/Casque/casque.xml</path>
     <offsets>
       <x-m>  0.050 </x-m>
       <y-m>  0.270 </y-m>
@@ -60,7 +60,7 @@
 
   <!-- Pedestal -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Pedestal/pedestal.xml</path>
+    <path>Pedestal/pedestal.xml</path>
     <offsets>
       <x-m>  0.03413 </x-m>
       <y-m>  0.00000 </y-m>
@@ -70,7 +70,7 @@
 
   <!-- KX165 -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/kx165/kx165-1.xml</path>
+    <path>Instruments/kx165/kx165.xml</path>
     <offsets>
       <x-m>  0.022 </x-m>
       <y-m> -0.322 </y-m>
@@ -80,7 +80,7 @@
 
   <!-- Ki206 -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/ki206/ki206.xml</path>
+    <path>Instruments/ki206/ki206.xml</path>
     <offsets>
       <x-m>  0.002 </x-m>
       <y-m>  0.178 </y-m>
@@ -90,7 +90,7 @@
 
   <!-- DME40 -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/dme40/dme40.xml</path>
+    <path>Instruments/dme40/dme40.xml</path>
     <offsets>
       <x-m>  0.001 </x-m>
       <y-m>  0.181 </y-m>
@@ -100,7 +100,7 @@
 
   <!-- AI -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <path>Instruments/ai/ai.xml</path>
     <offsets>
       <x-m>  0.005 </x-m>
       <y-m> -0.364 </y-m>
@@ -109,7 +109,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/ai/ai.xml</path>
+    <path>Instruments/ai/ai.xml</path>
     <offsets>
       <x-m> 0.005 </x-m>
       <y-m> 0.364 </y-m>
@@ -119,7 +119,7 @@
 
   <!-- ASI -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <path>Instruments/asi/asi.xml</path>
     <offsets>
       <x-m>  0.005 </x-m>
       <y-m> -0.456 </y-m>
@@ -128,7 +128,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+    <path>Instruments/asi/asi.xml</path>
     <offsets>
       <x-m> 0.005 </x-m>
       <y-m> 0.456 </y-m>
@@ -138,7 +138,7 @@
 
   <!-- ALT -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/alt/altimeter.xml</path>
+    <path>Instruments/alt/alt.xml</path>
     <offsets>
       <x-m> -0.002 </x-m>
       <y-m> -0.273 </y-m>
@@ -147,7 +147,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/alt/altimeter.xml</path>
+    <path>Instruments/alt/alt.xml</path>
     <offsets>
       <x-m> -0.002 </x-m>
       <y-m>  0.273 </y-m>
@@ -157,7 +157,7 @@
 
   <!-- TURN -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <path>Instruments/turn/turn.xml</path>
     <offsets>
       <x-m>  0.000 </x-m>
       <y-m> -0.456 </y-m>
@@ -166,7 +166,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/turn/turn.xml</path>
+    <path>Instruments/turn/turn.xml</path>
     <offsets>
       <x-m> 0.000 </x-m>
       <y-m> 0.456 </y-m>
@@ -176,7 +176,7 @@
 
   <!-- HI -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/adf/adf.xml</path>
+    <path>Instruments/adf/adf.xml</path>
     <offsets>
       <x-m>  0.001 </x-m>
       <y-m> -0.364 </y-m>
@@ -185,7 +185,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/adf/adf.xml</path>
+    <path>Instruments/adf/adf.xml</path>
     <offsets>
       <x-m> 0.001 </x-m>
       <y-m> 0.364 </y-m>
@@ -195,7 +195,7 @@
 
   <!-- VSI -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <path>Instruments/vsi/vsi.xml</path>
     <offsets>
       <x-m> -0.002 </x-m>
       <y-m> -0.273 </y-m>
@@ -204,7 +204,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vsi/vsi.xml</path>
+    <path>Instruments/vsi/vsi.xml</path>
     <offsets>
       <x-m> -0.002 </x-m>
       <y-m>  0.273 </y-m>
@@ -214,7 +214,7 @@
 
   <!-- VOR -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vor/vor.xml</path>
+    <path>Instruments/vor/vor.xml</path>
     <offsets>
       <x-m> -0.006 </x-m>
       <y-m> -0.179 </y-m>
@@ -223,7 +223,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/vor/vor2.xml</path>
+    <path>Instruments/vor/vor2.xml</path>
     <offsets>
       <x-m> -0.006 </x-m>
       <y-m> -0.179 </y-m>
@@ -233,7 +233,7 @@
 
   <!-- CLOCK -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <path>Instruments/clock/clock.xml</path>
     <offsets>
       <x-m>  0.001 </x-m>
       <y-m> -0.539 </y-m>
@@ -243,7 +243,7 @@
 
   <!-- AMP -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/amps/amp.xml</path>
+    <path>Instruments/amps/amp.xml</path>
     <offsets>
       <x-m>  0.001 </x-m>
       <y-m> -0.539 </y-m>
@@ -252,7 +252,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/clock/clock.xml</path>
+    <path>Instruments/clock/clock.xml</path>
     <offsets>
       <x-m> 0.001 </x-m>
       <y-m> 0.539 </y-m>
@@ -262,7 +262,7 @@
 
   <!-- TRIM -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/trim/trim.xml</path>
+    <path>Instruments/trim/trim.xml</path>
     <offsets>
       <x-m>  0.002 </x-m>
       <y-m> -0.093 </y-m>
@@ -272,7 +272,7 @@
 
   <!-- FLAPS -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/flaps/flaps.xml</path>
+    <path>Instruments/flaps/flaps.xml</path>
     <offsets>
       <x-m>  0.002 </x-m>
       <y-m> -0.033 </y-m>
@@ -282,7 +282,7 @@
 
   <!-- RPM -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/rpm.xml</path>
+    <path>Instruments/engines/rpm.xml</path>
     <offsets>
       <x-m> 0.004 </x-m>
       <y-m> 0.000 </y-m>
@@ -292,7 +292,7 @@
 
   <!-- MANIFOLD -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/man.xml</path>
+    <path>Instruments/engines/man.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.081 </y-m>
@@ -302,7 +302,7 @@
 
   <!-- PSI -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/psi/psi.xml</path>
+    <path>Instruments/psi/psi.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.081 </y-m>
@@ -311,7 +311,7 @@
   </model>
 
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/psi/psi1.xml</path>
+    <path>Instruments/psi/psi1.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m>  0.000 </y-m>
@@ -321,7 +321,7 @@
 
   <!-- EGT -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/engines/egt.xml</path>
+    <path>Instruments/engines/egt.xml</path>
     <offsets>
       <x-m> 0.004 </x-m>
       <y-m> 0.081 </y-m>
@@ -331,7 +331,7 @@
 
   <!-- FUEL -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/fuel/fuel.xml</path>
+    <path>Instruments/fuel/fuel.xml</path>
     <offsets>
       <x-m>  0.004 </x-m>
       <y-m> -0.081 </y-m>
@@ -341,7 +341,7 @@
 
   <!-- TEMP -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/temp/temp.xml</path>
+    <path>Instruments/temp/temp.xml</path>
     <offsets>
       <x-m> 0.004 </x-m>
       <y-m> 0.000 </y-m>
@@ -351,7 +351,7 @@
 
   <!-- GEAR -->
   <model>
-    <path>Aircraft/Aero-Commander/Models/Interior/Panel/Instruments/Gear/gear.xml</path>
+    <path>Instruments/Gear/gear.xml</path>
     <offsets>
       <x-m> 0.003961 </x-m>
       <y-m> 0.061840 </y-m>

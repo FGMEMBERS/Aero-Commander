@@ -11,16 +11,27 @@
     <object-name>needle1</object-name>
     <object-name>needle2</object-name>
     <object-name>needle3</object-name>
-    
+
     <object-name>vitre</object-name>
   </animation>
 
-  <!-- working for Rembrandt -->
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>cache</object-name>
+    <object-name>needle1</object-name>
+    <object-name>needle2</object-name>
+    <object-name>needle3</object-name>
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Compositor -->
   <effect>
-    <inherits-from>Aircraft/Aero-Commander/Models/Effects/Glass/glass</inherits-from>
+    <inherits-from>../../../../Effects/Glass/glass</inherits-from>
     <object-name>vitre</object-name>
   </effect>
-  
+
   <animation>
     <type>material</type>
     <object-name>face</object-name>
@@ -29,16 +40,17 @@
     <object-name>needle2</object-name>
     <object-name>needle3</object-name>
     <condition>
-      <property>/controls/lighting/instrument-lights</property>
+      <property>/controls/electric/battery-switch</property>
     </condition>
     <emission>
-      <red>   0.80 </red>
-      <green> 0.50 </green>
-      <blue>  0.50 </blue>
+      <factor-prop>controls/lighting/instruments-norm</factor-prop>
+      <red>   0.50 </red>
+      <green> 0.40 </green>
+      <blue>  0.30 </blue>
     </emission>
   </animation>
 
-  <animation> 
+  <animation>
     <type>rotate</type>
     <object-name>needle1</object-name>
     <property>/engines/engine[0]/oil-temperature</property>
@@ -49,14 +61,14 @@
       <entry><ind> 100 </ind><dep>  60 </dep></entry> <!-- 100 deg C -->
       <entry><ind> 150 </ind><dep>  90 </dep></entry> <!-- 150 deg C-->
     </interpolation>
-    <axis> 
+    <axis>
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
     </axis>
   </animation>
 
-  <animation> 
+  <animation>
     <type>rotate</type>
     <object-name>needle2</object-name>
     <property>/engines/engine[0]/oil-pressure-psi</property>
@@ -67,18 +79,18 @@
       <entry><ind> 200 </ind><dep> 180 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  0.000197 </x-m>
-      <y-m> -0.008138 </y-m>
-      <z-m> -0.009000 </z-m>  
+      <x-m>  0.00000 </x-m>
+      <y-m> -0.00968 </y-m>
+      <z-m> -0.01022 </z-m>
     </center>
-    <axis> 
+    <axis>
       <x> -1 </x>
       <y>  0 </y>
       <z>  0 </z>
     </axis>
   </animation>
 
-  <animation> 
+  <animation>
     <type>rotate</type>
     <object-name>needle3</object-name>
     <property>/engines/engine[0]/fuel-pressure-psi</property>
@@ -90,11 +102,11 @@
       <entry><ind> 35 </ind><dep> 180 </dep></entry>
     </interpolation>
     <center>
-      <x-m>  0.000197 </x-m>
-      <y-m>  0.008138 </y-m>
-      <z-m> -0.009000 </z-m>  
+      <x-m>  0.00000 </x-m>
+      <y-m>  0.00968 </y-m>
+      <z-m> -0.01022 </z-m>
     </center>
-    <axis> 
+    <axis>
       <x> 1 </x>
       <y> 0 </y>
       <z> 0 </z>

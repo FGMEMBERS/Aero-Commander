@@ -8,5 +8,10 @@
     <object-name>nosmoking</object-name>
   </animation>
 
+  <animation>
+    <type>noshadow</type>
+    <object-name>nosmoking</object-name>
+  </animation>
+
 </PropertyList>
 
